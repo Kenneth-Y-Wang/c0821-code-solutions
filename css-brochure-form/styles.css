@@ -49,13 +49,13 @@ select {
   font-family: 'Brandon Grotesque', sans-serif;
 }
 
-.Submit {
+.submit {
   padding-top: 5px;
   padding-bottom: 8px;
   text-align: right;
 }
 
-div.Submit input {
+div.submit input {
   width: 90px;
   height: 35px;
   border-radius: 17.5px;
