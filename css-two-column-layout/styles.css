@@ -14,6 +14,10 @@ body {
   margin-bottom: 40px;
 }
 
+.subrow {
+  display: flex;
+}
+
 h1 {
   font-size: 3em;
   font-weight: 600;
@@ -42,8 +46,8 @@ h3 {
 
 .col-full,
 .col-half,
-.col-sub1,
-.col-sub2 {
+.col-one-forth,
+.col-three-forth {
   position: relative;
   width: 100%;
   margin-left: 20px;
@@ -56,15 +60,14 @@ h3 {
 
 .col-half {
   max-width: 50%;
-  display: flex;
 }
 
-.col-sub1 {
+.col-one-forth {
   max-width: 25%;
   margin-right: 10px;
 }
 
-.col-sub2 {
+.col-three-forth {
   max-width: 75%;
   padding-top: 20px;
   margin-left: 0;
