@@ -1,5 +1,5 @@
 body {
-  font-family: 'Karla';
+  font-family: 'Karla', sans-serif;
 }
 
 .container {
@@ -10,27 +10,30 @@ body {
 .row {
   display: flex;
   width: 100%;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 h1 {
   font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
 }
 
 .titleword {
   width: 70%;
   margin: auto;
-  color: #343a40;
+  color: #495057;
 }
 
 .info {
   line-height: 1.5;
-  color: #343a40;
+  color: #495057;
+  width: 90%;
 }
 
 .subtitle {
-  width: 80%;
+  width: 70%;
 }
 
 h3 {
@@ -58,13 +61,12 @@ h3 {
 
 .col-sub1 {
   max-width: 25%;
-  display: flex;
-  margin-right: 0;
+  margin-right: 10px;
 }
 
 .col-sub2 {
   max-width: 75%;
-  padding-top: 30px;
+  padding-top: 20px;
   margin-left: 0;
 }
 
@@ -85,9 +87,11 @@ img {
 
 button {
   width: 200px;
-  height: 50px;
-  border: 1px solid red;
+  height: 40px;
+  border: 2px solid #e63946;
   background-color: white;
+  color: #e63946;
+  font-weight: bold;
 }
 
 .text-center {
