@@ -10,12 +10,11 @@ body {
 .row {
   display: flex;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
-.subrow {
-  display: flex;
+.mg-50 {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 h1 {
