@@ -9,9 +9,9 @@ console.log('typeof fullName:', typeof fullName);
 console.log('typeof isCool:', typeof isCool);
 console.log('typeof totalPets:', typeof totalPets);
 
-var unknow = null;
-console.log('value of unknow:', unknow);
-console.log('typeof unknow:', typeof unknow);
+var unknown = null;
+console.log('value of unknow:', unknown);
+console.log('typeof unknow:', typeof unknown);
 
 var never;
 console.log('value of never:', never);
