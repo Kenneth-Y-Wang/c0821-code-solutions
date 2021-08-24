@@ -33,15 +33,11 @@ h5 {
   width: 85%;
 }
 
-.appimgholder img {
-  width: 100%;
-}
-
 .smallimgholder {
   width: 20%;
 }
 
-.smallimgholder img {
+img {
   width: 100%;
 }
 
