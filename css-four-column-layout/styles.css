@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+}
+
+p {
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+
+h5 {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  background-color: #f7f8fa;
+}
+
+.appimgholder {
+  width: 85%;
+}
+
+.appimgholder img {
+  width: 100%;
+}
+
+.smallimgholder {
+  width: 20%;
+}
+
+.smallimgholder img {
+  width: 100%;
+}
+
+.col-full,
+.col-one-fifth {
+  width: 100%;
+  position: relative;
+}
+
+.col-full {
+  max-width: 100%;
+}
+
+.col-one-fifth {
+  max-width: 20%;
+}
+
+.mg-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
