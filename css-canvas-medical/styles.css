@@ -75,6 +75,13 @@ hr {
   margin-top: 50px;
 }
 
+.heroinfo {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  color: white;
+}
+
 .overlay {
   position: absolute;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.21) 0%, rgba(0, 0, 0, 0.21) 100%);
@@ -85,33 +92,24 @@ hr {
 }
 
 .herotitle {
-  height: 100px;
+  height: 80px;
   width: 400px;
-  position: absolute;
-  left: 60px;
-  top: 50px;
-  color: white;
   font-weight: 500;
 }
 
 .herocontent {
-  height: 200px;
+  height: 180px;
   width: 500px;
-  position: absolute;
-  left: 60px;
-  top: 170px;
-  color: white;
   line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .herobutton {
-  position: absolute;
-  left: 60px;
-  bottom: 70px;
+  margin-top: 20px;
 }
 
 .info {
-  width: 1200px;
   height: 500px;
   background-color: #fafafa;
   line-height: 1.5;
@@ -171,7 +169,6 @@ hr {
 
 .about {
   color: white;
-  width: 1200px;
   height: 350px;
   background-color: #525351;
   position: relative;
@@ -210,7 +207,6 @@ hr {
 }
 
 footer {
-  width: 1200px;
   height: 90px;
   background-color: #fafafa;
   color: #6c757d;
@@ -298,6 +294,10 @@ footer {
 
 .text-center {
   text-align: center;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .flex-col {
