@@ -18,19 +18,10 @@ body {
   height: 100vh;
 }
 
-.imgholder {
-  width: 200px;
-  height: 300px;
-  object-fit: contain;
-}
-
 img {
-  width: 100%;
-}
-
-.lvbag {
   width: 200px;
   height: 300px;
+  object-fit: fill;
 }
 
 p {
