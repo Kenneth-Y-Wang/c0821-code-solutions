@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+}
+
+img {
+  width: 200px;
+  height: 300px;
+  object-fit: fill;
+}
+
+p {
+  font-size: 0.7rem;
+  font-weight: bolder;
+}
+
+.price {
+  background-color: #f8edeb;
+  border-radius: 3px;
+  color: black;
+  width: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+span,
+s {
+  color: lightgray;
+}
+
+.bar {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.col-full,
+.col-one-sixth {
+  width: 100%;
+  position: relative;
+}
+
+.col-full {
+  max-width: 100%;
+}
+
+.col-one-sixth {
+  max-width: 16.7%;
+}
+
+.mg-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mg-10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
