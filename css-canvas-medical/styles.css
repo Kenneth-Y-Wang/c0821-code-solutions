@@ -1,0 +1,334 @@
+p {
+  font-family: 'Avenir', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+header {
+  color: #adb5bd;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+nav {
+  font-family: 'Avenir', sans-serif;
+  margin-right: -70px;
+}
+
+a {
+  line-height: 30px;
+}
+
+a:link {
+  color: #adb5bd;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.contactbutton > a:link,
+.contactbutton > a:visited {
+  color: white;
+}
+
+.logoholder {
+  width: 30%;
+  margin-left: 50px;
+}
+
+.logoholder img {
+  width: 100%;
+}
+
+hr {
+  border-top: 0.5px solid #e9ecef;
+}
+
+.heroblock {
+  width: 1100px;
+  height: 500px;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  position: relative;
+  margin-top: 50px;
+}
+
+.heroinfo {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.21) 0%, rgba(0, 0, 0, 0.21) 100%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.herotitle {
+  height: 80px;
+  width: 400px;
+  font-weight: 500;
+}
+
+.herocontent {
+  height: 180px;
+  width: 500px;
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.herobutton {
+  margin-top: 20px;
+}
+
+.info {
+  height: 500px;
+  background-color: #fafafa;
+  line-height: 1.5;
+  color: #6c757d;
+  margin-top: 60px;
+}
+
+.info h2 {
+  color: #6c757d;
+  font-weight: 200;
+  font-size: 1.7rem;
+  margin-bottom: 0;
+}
+
+.location {
+  font-size: 1.1rem;
+}
+
+.startbar {
+  margin-top: 35px;
+}
+
+.startbar h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.7rem;
+  color: #6c757d;
+  font-weight: 200;
+}
+
+.startbar p {
+  margin-top: 0;
+  color: #6c757d;
+}
+
+.getstartbutton {
+  height: 40px;
+  width: 150px;
+  background-color: #223e60;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.1rem;
+}
+
+.contactbutton {
+  height: 30px;
+  width: 100px;
+  background-color: #223e60;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-family: 'Avenir', sans-serif;
+  margin-right: 50px;
+}
+
+.about {
+  color: white;
+  height: 350px;
+  background-color: #525351;
+  position: relative;
+  margin-top: 20px;
+}
+
+.aboutaddress {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 100px;
+  left: 80px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.aboutaddress img {
+  width: 40%;
+  padding-bottom: 20px;
+}
+
+.aboutcompany {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 80px;
+  right: 400px;
+}
+
+.aboutproduct {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 80px;
+  right: 40px;
+}
+
+footer {
+  height: 90px;
+  background-color: #fafafa;
+  color: #6c757d;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  position: relative;
+  width: 100%;
+}
+
+.col-1 {
+  max-width: 7.33%;
+}
+
+.col-2 {
+  max-width: 15.66%;
+}
+
+.col-3 {
+  max-width: 24%;
+}
+
+.col-4 {
+  max-width: 32.33%;
+}
+
+.col-5 {
+  max-width: 40.66%;
+}
+
+.col-6 {
+  max-width: 49%;
+}
+
+.col-7 {
+  max-width: 57.33%;
+}
+
+.col-8 {
+  max-width: 65.66%;
+}
+
+.col-9 {
+  max-width: 74%;
+}
+
+.col-10 {
+  max-width: 82.33%;
+}
+
+.col-11 {
+  max-width: 90.66%;
+}
+
+.col-12 {
+  max-width: 99%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.mg-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mgtop-50 {
+  margin-top: 50px;
+}
+
+.mgleft-50 {
+  margin-left: 50px;
+}
+
+.pdtop-50 {
+  padding-top: 50px;
+}
+
+.pdleft-50 {
+  padding-left: 50px;
+}
+
+.pdright-50 {
+  padding-right: 50px;
+}
+
+.pd-auto {
+  padding: auto;
+}
