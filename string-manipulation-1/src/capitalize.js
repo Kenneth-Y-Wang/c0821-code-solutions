@@ -1,12 +1,8 @@
 /* exported capitalize */
 function capitalize(word) {
-  var result = ''; /* create a string storage-result for output */
-  for (var i = 0; i < word.length; i++) { /* look at each character ,one at a time */
-    if (i === 0) { /* identify the first character in the word */
-      result += word[i].toUpperCase(); /* make that Character upper case, add it to the result storage */
-    } else if (i > 0) { /* for rest of the characters in the word, make them all lower case and add them to the storage */
-      result += word[i].toLowerCase();
-    }
+  var result = word[0].toUpperCase(); /* create a string storage-result for output with the first character from word capitalized */
+  for (var i = 1; i < word.length; i++) { /* look at each character from the second character ,one at a time */
+    result += word.charAt(i).toLowerCase(); /* add each character in its lower case form to the result storage */
   }
   return result; /* return the result storage */
 }
