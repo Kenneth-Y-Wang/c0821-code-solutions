@@ -1,5 +1,5 @@
 /* exported chunk */
-function chunk(array, size) {
+/* function chunk(array, size) {
   var final = [];
   if (size > array.length) {
     final = array;
@@ -11,7 +11,7 @@ function chunk(array, size) {
   }
   return final;
 }
-
+*/
 /* create a storage to store each 'size' of array
 create a final storage for outcome
 if the size is bigger than the array length, then return the array itself as final outcome
@@ -22,7 +22,7 @@ keep the process until the rest of elements from given array are added to 'resul
 return the final array
 
 */
-/* function chunk(array, size) {
+function chunk(array, size) {
   var result = [];
   var final = [];
   if (size > array.length) {
@@ -34,12 +34,12 @@ return the final array
     if (result.length === size) {
       final.push(result);
       result = [];
+      result.push(array[i]);
+
     } else {
-      result[i] = array[i];
+      result.push(array[i]);
     }
   }
   final.push(result);
   return final;
 }
-
-*/
