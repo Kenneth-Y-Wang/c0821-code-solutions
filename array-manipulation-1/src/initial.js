@@ -11,8 +11,8 @@ function initial(array) {
 /* faster version
 
 function initial(array){
-  array.pop();
-  return array;
+  var result=array.slice(0,(array.length-1));
+  return result;
 }
 
 */
