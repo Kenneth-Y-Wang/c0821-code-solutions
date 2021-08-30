@@ -11,3 +11,11 @@ function take(array, count) {
   }
   return result;
 }
+
+/* faster version, using .slice without mutating the array.
+function take(array, count) {
+  var result=array.slice(0, count);
+  return result;
+}
+
+*/
