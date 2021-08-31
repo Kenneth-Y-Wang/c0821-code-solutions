@@ -34,12 +34,10 @@ function chunk(array, size) {
     if (result.length === size) {
       final.push(result);
       result = [];
-      result.push(array[i]);
-
-    } else {
-      result.push(array[i]);
     }
+    result.push(array[i]);
   }
+
   final.push(result);
   return final;
 }
