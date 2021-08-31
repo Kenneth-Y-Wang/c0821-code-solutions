@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1000px;
+  height: 500px;
+}
+
+.on {
+  background-color: #faf4e3;
+}
+
+.off {
+  background-color: black;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-full {
+  width: 200px;
+  height: 200px;
+}
+
+.lightBulb {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: none;
+}
+
+.switch-on {
+  background-color: #f7ef92;
+  box-shadow: 0 0 44px 14px #e5d4ae;
+}
+
+.switch-off {
+  background-color: #212120;
+}
