@@ -1,10 +1,10 @@
-var count = 0;
+var trigger = true;
 var $light = document.querySelector('.lightBulb');
 var $container = document.querySelector('.container');
 
 $light.addEventListener('click', function () {
-  count++;
-  if (count % 2 === 1) {
+  trigger = !trigger;
+  if (trigger === false) {
     $light.className = 'lightBulb switch-off';
     $container.className = 'container off';
   } else {
