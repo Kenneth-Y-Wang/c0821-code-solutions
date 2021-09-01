@@ -18,16 +18,11 @@ var $email = document.querySelector('#user-email');
 var $message = document.querySelector('#user-message');
 
 $name.addEventListener('focus', handleFocus);
+$name.addEventListener('blur', handleBlur);
+$name.addEventListener('input', handleInput);
 $email.addEventListener('blur', handleBlur);
+$email.addEventListener('focus', handleFocus);
+$email.addEventListener('input', handleInput);
 $message.addEventListener('input', handleInput);
-
-var $contactform = document.querySelector('#contact-form');
-$contactform.addEventListener('submit', function () {
-  event.preventDefault();
-  var messagedata = {};
-  messagedata.name = $contactform.elements.name.value;
-  messagedata.email = $contactform.elements.email.value;
-  messagedata.message = $contactform.elements.message.value;
-  console.log('messagedata', messagedata);
-  $contactform.reset();
-});
+$message.addEventListener('focus', handleFocus);
+$message.addEventListener('blur', handleBlur);
