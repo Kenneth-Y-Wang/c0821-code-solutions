@@ -8,7 +8,7 @@
 // if the keyin value not strictly equals to the current element textcontent, then change the current element class to 'wrong standby'
 // if the keyin value matches, then num increase by 1.
 
-var $spam = document.querySelectorAll('span.letter');
+var $span = document.querySelectorAll('span.letter');
 var $message = document.querySelector('.message');
 var $score = document.querySelector('.score');
 var $yes = document.querySelector('.yes');
@@ -20,15 +20,15 @@ var num = 0;
 
 document.addEventListener('keydown', function () {
   count++;
-  if (event.key === $spam[value].textContent) {
+  if (event.key === $span[value].textContent) {
     value++;
   }
 
-  $spam[value - 1].className = 'letter right';
-  $spam[value].className = 'letter standby';
+  $span[value - 1].className = 'letter right';
+  $span[value].className = 'letter standby';
 
   if (value === 19) {
-    $spam[value].className = 'letter';
+    $span[value].className = 'letter';
 
   }
 
@@ -52,8 +52,8 @@ document.addEventListener('keydown', function () {
 );
 
 document.addEventListener('keydown', function () {
-  if (event.key !== $spam[num].textContent) {
-    $spam[value].className = ' letter wrong standby';
+  if (event.key !== $span[num].textContent) {
+    $span[value].className = ' letter wrong standby';
   } else {
     num++;
   }
@@ -62,5 +62,5 @@ document.addEventListener('keydown', function () {
 $yes.addEventListener('click', function () {
   value = 0;
   count = 0;
-  $spam[0].className = 'letter standby';
+  $span[0].className = 'letter standby';
 });
