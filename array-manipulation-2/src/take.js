@@ -1,4 +1,10 @@
 /* exported take */
+
+// create a array storage for final outcome
+// if the given count is larger then the array length, then the full array will be returned
+// if the given count is smaller then the array length, then we look at each element from array, from index 0, to index count
+// for each checked array element, push it to result
+// return result
 function take(array, count) {
   var result = [];
   if (count > array.length) {
@@ -7,7 +13,7 @@ function take(array, count) {
   }
 
   for (var i = 0; i < count; i++) {
-    result[i] = array[i];
+    result.push(array[i]);
   }
   return result;
 }

@@ -1,17 +1,5 @@
 /* exported chunk */
-/* function chunk(array, size) {
-  var final = [];
-  if (size > array.length) {
-    final = array;
-    return final;
-  }
 
-  for (var i = 0; i < array.length; i += size) {
-    final.push(array.slice(i, i + size));
-  }
-  return final;
-}
-*/
 /* create a storage to store each 'size' of array
 create a final storage for outcome
 if the size is bigger than the array length, then return the array itself as final outcome
