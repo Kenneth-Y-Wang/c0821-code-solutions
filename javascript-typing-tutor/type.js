@@ -27,7 +27,7 @@ document.addEventListener('keydown', function () {
   $span[value - 1].className = 'letter right';
   $span[value].className = 'letter standby';
 
-  if (value === 19) {
+  if (value === 23) {
     $span[value].className = 'letter';
 
   }
@@ -35,13 +35,13 @@ document.addEventListener('keydown', function () {
   if (value > 0 && value < 5) {
     $message.textContent = 'You can do it!';
     $message.className = ' message mild';
-  } else if (value >= 5 && value < 12) {
+  } else if (value >= 5 && value < 16) {
     $message.textContent = 'Not too bad!';
     $message.className = ' message good';
-  } else if (value >= 12 && value < 19) {
+  } else if (value >= 16 && value < 23) {
     $message.textContent = 'You are almost there!';
     $message.className = ' message better';
-  } else if (value === 19) {
+  } else if (value === 23) {
     $message.textContent = 'Wow, you made it!';
     $message.className = ' message finish';
     $score.className = 'score';
