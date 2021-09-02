@@ -19,12 +19,19 @@ var num = 0;
 
 document.addEventListener('keydown', function () {
   count++;
+
   if (event.key === $span[value].textContent) {
     value++;
   }
 
   $span[value - 1].className = 'letter right';
   $span[value].className = 'letter standby';
+
+  if (event.key !== $span[num].textContent) {
+    $span[num].className = ' letter wrong standby';
+  } else {
+    num++;
+  }
 
   if (value === 23) {
     $span[value].className = 'letter';
@@ -50,17 +57,10 @@ document.addEventListener('keydown', function () {
 }
 );
 
-document.addEventListener('keydown', function () {
-  if (event.key !== $span[num].textContent) {
-    $span[value].className = ' letter wrong standby';
-  } else {
-    num++;
-  }
-});
-
 $yes.addEventListener('click', function () {
   value = 0;
   count = 0;
+  num = 0;
   $span[0].className = 'letter standby';
   for (var a = 1; a < $span.length; a++) {
     $span[a].className = 'letter';
