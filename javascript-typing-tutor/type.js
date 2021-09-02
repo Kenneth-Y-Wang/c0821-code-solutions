@@ -12,7 +12,6 @@ var $span = document.querySelectorAll('span.letter');
 var $message = document.querySelector('.message');
 var $score = document.querySelector('.score');
 var $yes = document.querySelector('.yes');
-// var $no = document.querySelector('.no');
 
 var value = 0;
 var count = 0;
@@ -63,4 +62,7 @@ $yes.addEventListener('click', function () {
   value = 0;
   count = 0;
   $span[0].className = 'letter standby';
+  for (var a = 1; a < $span.length; a++) {
+    $span[a].className = 'letter';
+  }
 });
