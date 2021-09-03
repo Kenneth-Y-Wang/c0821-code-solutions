@@ -15,22 +15,16 @@ var $yes = document.querySelector('.yes');
 
 var value = 0;
 var count = 0;
-var num = 0;
 
 document.addEventListener('keydown', function () {
   count++;
 
   if (event.key === $span[value].textContent) {
     value++;
-  }
-
-  $span[value - 1].className = 'letter right';
-  $span[value].className = 'letter standby';
-
-  if (event.key !== $span[num].textContent) {
-    $span[num].className = ' letter wrong standby';
+    $span[value - 1].className = 'letter right';
+    $span[value].className = 'letter standby';
   } else {
-    num++;
+    $span[value].className = ' letter wrong standby';
   }
 
   if (value === 23) {
@@ -60,7 +54,6 @@ document.addEventListener('keydown', function () {
 $yes.addEventListener('click', function () {
   value = 0;
   count = 0;
-  num = 0;
   $span[0].className = 'letter standby';
   for (var a = 1; a < $span.length; a++) {
     $span[a].className = 'letter';
