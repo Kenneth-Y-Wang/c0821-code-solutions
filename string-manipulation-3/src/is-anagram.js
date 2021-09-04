@@ -2,6 +2,7 @@
 function isAnagram(firstString, secondString) {
   // var first = '';
   // var second = '';
+
   var firstArray = [];
   var secondArray = [];
 
@@ -18,10 +19,12 @@ function isAnagram(firstString, secondString) {
   }
 
   for (var a = 0; a < firstArray.length; a++) {
-    secondArray.splice(secondArray.indexOf(firstArray[a]), 1);
+    if (secondArray.indexOf(firstArray[a]) !== -1) {
+      secondArray.splice(secondArray.indexOf(firstArray[a]), 1);
+    }
   }
 
-  if (secondArray === []) {
+  if (secondArray.length === 0) {
     return true;
   }
 
