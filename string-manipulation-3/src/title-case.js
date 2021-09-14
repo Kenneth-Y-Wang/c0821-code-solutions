@@ -52,8 +52,16 @@ function titleCase(title) {
     } else {
       array[j] = array[j].charAt(0).toUpperCase() + array[j].substr(1);
     }
-    array[0] = array[0].charAt(0).toUpperCase() + array[0].substr(1);
 
+  }
+  if (array[0].indexOf('javascript') !== -1) {
+    array[0] = array[0].charAt(0).toUpperCase() + array[0].substr(1, 3) + array[0].charAt(4).toUpperCase() + array[0].substr(5);
+  } else if (array[0].indexOf('-') !== -1) {
+    array[0] = array[0].charAt(0).toUpperCase() + array[0].substr(1, array[0].indexOf('-')) + array[0].charAt(array[0].indexOf('-') + 1).toUpperCase() + array[0].substr(array[0].indexOf('-') + 2);
+  } else if (array[0].indexOf('api') !== -1) {
+    array[0] = array[0].charAt(0).toUpperCase() + array[0].charAt(1).toUpperCase() + array[0].charAt(2).toUpperCase() + array[0].substr(3);
+  } else {
+    array[0] = array[0].charAt(0).toUpperCase() + array[0].substr(1);
   }
 
   for (var b = 0; b < array.length; b++) {
