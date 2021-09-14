@@ -26,8 +26,9 @@ var calculator = {
     var result = 0;
     for (var i = 0; i < numbers.length; i++) {
       result += numbers[i];
-      var average = result / (numbers.length);
+
     }
+    var average = result / (numbers.length);
     return average;
   }
 };
