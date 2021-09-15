@@ -24,6 +24,7 @@ function titleCase(title) {
   var middle = '';
   var array = [];
   var result = '';
+  var final = '';
 
   for (var i = 0; i < title.length; i++) {
     words += title.charAt(i).toLowerCase();
@@ -37,6 +38,23 @@ function titleCase(title) {
     }
   }
   array.push(middle);
+
+  // for (var j = 0; j < array.length; j++) {
+  //   if (array[j] === 'and' || array[j] === 'or' || array[j] === 'nor' || array[j] === 'but' || array[j] === 'a' || array[j] === 'an' || array[j] === 'the' || array[j] === 'as' || array[j] === 'at' || array[j] === 'by' || array[j] === 'for' || array[j] === 'in' || array[j] === 'of' || array[j] === 'on' || array[j] === 'per' || array[j] === 'to') {
+  //     array[j] = array[j].substr(0);
+
+  //   } else if (array[j].indexOf('-') !== -1) {
+  //     array[j] = array[j].charAt(0).toUpperCase() + array[j].substr(1, array[j].indexOf('-')) + array[j].charAt(array[j].indexOf('-') + 1).toUpperCase() + array[j].substr(array[j].indexOf('-') + 2);
+  //   } else if (array[j].indexOf('javascript') !== -1) {
+  //     array[j] = array[j].charAt(0).toUpperCase() + array[j].substr(1, 3) + array[j].charAt(4).toUpperCase() + array[j].substr(5);
+  //   } else if (array[j].indexOf('api') !== -1) {
+  //     array[j] = array[j].charAt(0).toUpperCase() + array[j].charAt(1).toUpperCase() + array[j].charAt(2).toUpperCase() + array[j].substr(3);
+  //   } else if (array[0] === 'and' || array[j] === 'or' || array[j] === 'nor' || array[j] === 'but' || array[j] === 'a' || array[j] === 'an' || array[j] === 'the' || array[j] === 'as' || array[j] === 'at' || array[j] === 'by' || array[j] === 'for' || array[j] === 'in' || array[j] === 'of' || array[j] === 'on' || array[j] === 'per' || array[j] === 'to') {
+  //     array[0] = array[0].charAt(0).toUpperCase() + array[0].substr(1);
+  //   } else {
+  //     array[j] = array[j].charAt(0).toUpperCase() + array[j].substr(1);
+  //   }
+  // }
 
   for (var j = 1; j < array.length; j++) {
 
@@ -71,7 +89,14 @@ function titleCase(title) {
       result += array[b] + ' ';
     }
   }
-  return result;
+  for (var c = 0; c < result.length; c++) {
+    if (result[c - 2] === ':') {
+      final += result.charAt(c).toUpperCase();
+    } else {
+      final += result[c];
+    }
+  }
+  return final;
 }
 
 /* easier version
