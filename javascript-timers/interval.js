@@ -18,5 +18,3 @@ function clearCountDown() {
 }
 
 var intervalId = setInterval(countDown, 1000);
-
-document.addEventListener('DOMContentLoaded', intervalId);
