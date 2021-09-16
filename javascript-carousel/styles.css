@@ -33,6 +33,12 @@ i {
   font-weight: 300;
   color: black;
   font-size: 50px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+i:hover {
+  font-size: 70px;
 }
 
 .picHolder {
@@ -58,10 +64,12 @@ button {
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .click {
   background-color: black;
+  transform: scale(1.1);
 }
 
 .column-full,
