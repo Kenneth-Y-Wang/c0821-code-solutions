@@ -1,4 +1,12 @@
 /* exported isPalindromic */
+
+// first, create an empty string to store the parameter string without the space
+// loop through each letter in the parameter string, and add every letter to the empty string without the space
+// after we get the first string, then we create another empty string for checking if the string is palindormic
+// loop through each letter in the first string from the back, and add each letter to the middle string
+// after the middle string is being concatenated, compare if the first string and middle string are strictly equal
+// if yes, then return true, if not ,then return false
+
 function isPalindromic(string) {
   var first = '';
   var middle = '';
@@ -18,13 +26,3 @@ function isPalindromic(string) {
     return false;
   }
 }
-
-//   for (var i = 0; i < string.length; i++) {
-//     for (i = (string.length - 1); i > -1; i--) {
-//       if (string[i] === string[string.length - 1]) {
-//         return true;
-//       }
-//     }
-//   }
-//   return false;
-// }

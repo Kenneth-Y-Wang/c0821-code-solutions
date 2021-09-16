@@ -1,4 +1,13 @@
 /* exported reverseWords */
+
+// first , we create an empty string, to have the parameter string stored in reverse order
+// after we have the reversed string, we loop for space and add each letter to a wordStorage string
+// each word from wordStorage string will be pushed to the secondStorage array
+// after the secondStorage array is formed, we use a loop to go through every element in that array from the back to the 0 index
+// we push every element to the thirdStorage array, with the order of the outcome string. now need to convert the array to string
+// by looping through the thirdStorage array, we concatenate each elements to the final string
+// return the final string
+
 function reverseWords(string) {
   var firstStorage = '';
   var wordStorage = '';

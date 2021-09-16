@@ -1,7 +1,13 @@
 /* exported isAnagram */
+
+// create two empty arraies to store the given two parameters strings without the space
+// after we have the first and second array, then we loop every letter from first array
+// by using indexOf, if the letter from firstarray has an index in second array
+// then we use splice to delete that letter from second array
+// after the loop, if the second array has 0 length, then return true for the function
+// if not, then return false
+
 function isAnagram(firstString, secondString) {
-  // var first = '';
-  // var second = '';
 
   var firstArray = [];
   var secondArray = [];
