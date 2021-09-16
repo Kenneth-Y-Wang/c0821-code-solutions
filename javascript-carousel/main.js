@@ -5,6 +5,18 @@ var $img = document.querySelectorAll('img');
 var $buttonHolder = document.querySelector('.buttonHolder');
 var timeId = null;
 var count = 0;
+var $form = document.querySelector('form');
+
+$form.addEventListener('submit', function () {
+  event.preventDefault();
+
+  for (var i = 0; i < $img.length; i++) {
+    if (String($form.elements.picNumber.value) === $img[i].getAttribute('data-view')) {
+      $img[i].setAttribute('src', $form.elements.url.value);
+    }
+  }
+  $form.reset();
+});
 
 function viewChange() {
   for (var a = 0; a < $img.length; a++) {

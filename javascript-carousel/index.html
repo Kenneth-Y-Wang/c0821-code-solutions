@@ -8,6 +8,9 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -24,17 +27,32 @@
           <img class="hidden" data-view="5" src="images/039.png">
         </div>
         <div class="buttonHolder column-full">
-          <button class="switch  click"  data-view="1"></button>
-          <button class="switch"  data-view="2"></button>
-          <button class="switch"  data-view="3"></button>
-          <button class="switch" data-view="4"></button>
-          <button class="switch" data-view="5"></button>
+          <button class="switch  click"  type="button" data-view="1"></button>
+          <button class="switch"  type="button" data-view="2"></button>
+          <button class="switch"  type="button" data-view="3"></button>
+          <button class="switch" type="button" data-view="4"></button>
+          <button class="switch" type="button" data-view="5"></button>
         </div>
       </div>
       <div class="arrowRight column-one-sixth">
         <i class="fas fa-angle-right"></i>
       </div>
     </div>
+    <form class="entryBar column-full">
+      <input
+      id="url"
+      name="url"
+      type="url"
+      placeholder="Please add your picture... ">
+      <select id="picNumber" name="picNumber">
+        <option value="1">Pic 1</option>
+        <option value="2">Pic 2</option>
+        <option value="3">Pic 3</option>
+        <option value="4">Pic 4</option>
+        <option value="5">Pic 5</option>
+      </select>
+      <button class="submitButton" type="submit">SAVE</button>
+    </form>
   </div>
   <script src="main.js"></script>
 </body>
