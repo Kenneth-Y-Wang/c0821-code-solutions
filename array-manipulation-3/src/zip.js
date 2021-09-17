@@ -1,4 +1,14 @@
 /* exported zip */
+
+// copy each array with firstCopy and secondCopy
+// check every element from the firstCopy, one at a time
+// when chack each element from firstCopy, check only first elemnt from the second array
+// push first element from firstCopy and first element from secondCopy to the middle array
+// once the middle array has two elements, then push the middle array to final array, and empty the middle array
+// continuous the process until either firstCopy or secondCopy has no more elements, loop break
+// push the middle to final the last time
+// return final array
+
 function zip(first, second) {
 
   var firstCopy = [];
@@ -29,30 +39,3 @@ function zip(first, second) {
   final.push(middle);
   return final;
 }
-
-// for (var a=0;a<middle.length;i=)
-// // if (middle.length === 2) {
-// //   final.push(middle);
-// //   middle = [];
-// // }
-// for (var i = 0; i < first.length; i++) {
-// middle.push(first[i]);
-// // }
-// for (var j = 0; j < first.length; j++) {
-// middle.push(second[j]);
-// // }
-
-// return final;
-
-//     for (var j = 0; j < first.length; j++) {
-//       if (middle.length === 2) {
-//         final.push(middle);
-//         middle = [];
-//       } else {
-//         middle.push(first[i], second[j]);
-//       }
-//     }
-//   }
-//   final.push(middle);
-//   return final;
-// }

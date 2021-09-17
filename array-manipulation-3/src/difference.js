@@ -1,39 +1,26 @@
 /* exported difference */
+
+// create a final array for outcome
+// loop through every element from first array
+// if any element is NOT in second array, then push it to final array
+// after first array is check, then loop through second array element, one by one
+// if any element is NOT in first array, then push it to the final array
+// return the final array
+
 function difference(first, second) {
-  var firstCopy = [];
-  var secondCopy = [];
+  var final = [];
 
   for (var i = 0; i < first.length; i++) {
     if (second.indexOf(first[i]) === -1) {
-      firstCopy.push(first[i]);
+      final.push(first[i]);
     }
   }
 
   for (var j = 0; j < second.length; j++) {
     if (first.indexOf(second[j]) === -1) {
-      secondCopy.push(second[j]);
+      final.push(second[j]);
     }
   }
 
-  var final = firstCopy.concat(secondCopy);
   return final;
 }
-
-//   for (var a = 0; a < first.length; a++) {
-//     firstCopy.push(first[a]);
-//   }
-
-//   for (var b = 0; b < second.length; b++) {
-//     secondCopy.push(second[b]);
-//   }
-
-//   for (var i = 0; i < firstCopy.length; i++) {
-//     if (second.indexOf(firstCopy[i]) !== -1) {
-//       secondCopy.splice(second.indexOf(firstCopy[i]), 1);
-//       firstCopy.splice(i, 1);
-//     }
-//   }
-//   console.log(firstCopy);
-//   console.log(secondCopy);
-
-// }
