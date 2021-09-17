@@ -12,12 +12,16 @@
 /* after the word being added to array, we clear the string for next word */
 /* for all the other characters in the words string, we add them one by one to the middle storage, waiting to be added to array */
 /* add the last word from middle string to array */
-/* once the array is formed, we check each word in array one by one */
-/* each word will be converted to first letter upper case with the rest of letters lower case. */
+/* once the array is formed, we check each word in array starting the second one, one by one */
+/* if the word is minor words, then keep all lowercases. if the word contain '-', then cap first letter and the letter after '-'; if the word is Javascript, then return JavaScript; if the word is api, then return API */
+/* all the other word will be converted to first letter upper case with the rest of letters lower case. */
+/* then we check the first element of the array, with one extra condition that make minor words first letter cap */
 /* once each word in array are converted, now we look at each word in array again, one by one */
 /* if the index of word is the last word in array, its being added to result string without following by a space */
 /* every word in array will be added to result string followed by a space */
-/* return the result string */
+/* after the string is formed, then we check each index in string */
+/* concatenate each index to a final string, for any index, if its 2 spot ahead is ':', the cap the current index and concatenate it */
+/* return the final string */
 
 function titleCase(title) {
   var words = '';
