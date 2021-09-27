@@ -40,15 +40,9 @@ function cardGame(array, number) {
     }
     points.push(player[j].totalPoint);
   }
-  var max = points[0];
-  for (var c = 1; c < points.length; c++) {
-    if (points[c] > max) {
-      max = points[c];
-    }
-  }
   var winner = {};
   for (var b = 0; b < player.length; b++) {
-    if (player[b].totalPoint === max) {
+    if (player[b].totalPoint === Math.max(...points)) {
       winner.name = player[b].playname;
       winner.points = player[b].totalPoint;
     }
