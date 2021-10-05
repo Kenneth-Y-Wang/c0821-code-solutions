@@ -1,0 +1,78 @@
+    1  exit
+    2  cd ~/repos/c0821-code-solutions
+    3  git status
+    4  git switch master
+    5  git pull origin master
+    6  git status
+    7  git branch es6-arrow-functions
+    8  git switch es6-arrow-functions
+    9  git status
+   10  git add  .
+   11  git commit -m " Completed es6-arrow-functions exercise"
+   12  git push origin es6-arrow-functions
+   13  git status
+   14  git switch master
+   15  git pull origin master
+   16  git switch es6-arrow-functions
+   17  git status
+   18  git switch master
+   19  git status
+   20  git branch command-line-basics
+   21  git status
+   22  git pull origin master
+   23  git switch command-line-basics
+   24  cd command-line-basics
+   25  pwd
+   26  man man
+   27  man cat
+   28  cat laziness.txt
+   29  cat impatience.txt
+   30  cat hubris.txt
+   31  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+   32  cat three-virtues.txt
+   33  man ls
+   34  ls
+   35  ls -a
+   36  ls -F
+   37  man ls
+   38  ls -a lfz-staff
+   39  ls -aF lfz-staff > lfz-staff/contents.txt
+   40  cat lfz-staff/contents.txt
+   41  man pwd
+   42  pwd
+   43  pwd > i-was-here.txt
+   44  ls
+   45  cat i-was-here.txt
+   46  man echo
+   47  echo 'Hello, World!'
+   48  echo 'Hello, World!' > hello.txt
+   49  ls
+   50  cat hello.txt
+   51  man touch
+   52  touch tag-youre-it.txt
+   53  ls
+   54  touch snoot/boop.txt
+   55  ls -a snoot
+   56  man mkdir
+   57  mkdir parent
+   58  ls
+   59  mkdir -p parent/child/grandchild
+   60  touch parent/child/grandchild/.gitkeep
+   61  ls -a
+   62  ls -a parent/child/grandchild
+   63  man mv
+   64  mv pokiemans pokemon
+   65  ls
+   66  man rm
+   67  rm lol.txt
+   68  ls
+   69  rm -r kill-me/
+   70  ls
+   71  man cp
+   72  cp and-then.txt no-and-then.txt
+   73  ls
+   74  cat and-then.txt
+   75  cat no-and-then.txt
+   76  man history
+   77  history
+   78  history > command-history.txt
