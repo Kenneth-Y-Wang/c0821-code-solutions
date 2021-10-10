@@ -1,0 +1,17 @@
+{
+  "nextId": 13,
+  "notes": {
+    "2": {
+      "content": "LearningFuze is a greatplace to learn coding!",
+      "id": 2
+    },
+    "4": {
+      "id": 4,
+      "content": "Inertia is a property of matter."
+    },
+    "6": {
+      "content": "Tim is awesome",
+      "id": 6
+    }
+  }
+}
