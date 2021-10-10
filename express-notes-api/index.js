@@ -8,15 +8,13 @@ app.use(expressJson);
 const noteBook = require('./data.json');
 const fs = require('fs');
 
-// console.log(noteBook);
-
 app.get('/api/notes', function (req, res) {
   const notesArray = [];
   for (const key in noteBook.notes) {
     notesArray.push(noteBook.notes[key]);
   }
   res.status(200).json(notesArray);
-  // console.log(req.method);
+
 });
 
 app.get('/api/notes/:id', function (req, res) {
@@ -33,7 +31,7 @@ app.get('/api/notes/:id', function (req, res) {
 });
 
 app.post('/api/notes', function (req, res) {
-  // console.log(req.body);
+
   const note = req.body;
 
   if (Object.keys(note).length === 0 || note.content === '') {
@@ -50,13 +48,15 @@ app.post('/api/notes', function (req, res) {
   fs.writeFile('data.json', updatedNote, 'utf8', err => {
     if (err) {
       res.status(500).json({ error: 'An unexpected error occurred.' });
+    } else {
+      res.status(201).json(note);
     }
   });
-  res.status(201).json(note);
+
 });
 
 app.delete('/api/notes/:id', function (req, res) {
-  // console.log(req.params);
+
   const noteIndex = req.params.id;
 
   if (Number(noteIndex) < 0 || Number.isInteger(Number(noteIndex)) === false) {
@@ -71,14 +71,16 @@ app.delete('/api/notes/:id', function (req, res) {
     fs.writeFile('data.json', updatedNote, 'utf8', err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.sendStatus(204);
       }
     });
-    res.sendStatus(204);
+
   }
 });
 
 app.put('/api/notes/:id', function (req, res) {
-  // console.log(req.body);
+
   const noteIndex = req.params.id;
   const note = req.body;
   if (Number(noteIndex) < 0 || Number.isInteger(Number(noteIndex)) === false) {
@@ -98,9 +100,11 @@ app.put('/api/notes/:id', function (req, res) {
     fs.writeFile('data.json', updatedNote, 'utf8', err => {
       if (err) {
         res.status(500).json({ error: 'An unexpected error occurred.' });
+      } else {
+        res.status(200).json(note);
       }
     });
-    res.status(200).json(note);
+
   }
 });
 
