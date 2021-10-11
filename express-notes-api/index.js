@@ -34,7 +34,7 @@ app.post('/api/notes', function (req, res) {
 
   const note = req.body;
 
-  if (Object.keys(note).length === 0 || note.content === '') {
+  if (typeof note.content === 'undefined') {
     res.status(400).json({ error: 'content is a required field' });
     return;
   }
@@ -85,7 +85,7 @@ app.put('/api/notes/:id', function (req, res) {
   const note = req.body;
   if (Number(noteIndex) < 0 || Number.isInteger(Number(noteIndex)) === false) {
     res.status(400).json({ error: 'id must be a positive integer' });
-  } else if (Object.keys(note).length === 0 || note.content === '') {
+  } else if (typeof note.content === 'undefined') {
     res.status(400).json({ error: 'content is a required field' });
 
   } else if (!noteBook.notes[noteIndex]) {
