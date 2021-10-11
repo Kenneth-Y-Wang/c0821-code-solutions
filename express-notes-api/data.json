@@ -1,0 +1,21 @@
+{
+  "nextId": 6,
+  "notes": {
+    "1": {
+      "content": "LearningFuze is a greatplace to learn coding!",
+      "id": 1
+    },
+    "2": {
+      "content": " Cody is awesome again!",
+      "id": 2
+    },
+    "3": {
+      "content": "Tim is awesome",
+      "id": 3
+    },
+    "5": {
+      "content": "Final project is around the corner",
+      "id": 5
+    }
+  }
+}
