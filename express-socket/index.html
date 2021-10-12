@@ -38,6 +38,23 @@
     }
 
     form.addEventListener('submit', sendMessage);
+
+    function addMessageToHTML(message) {
+      // create a new li element
+      const li = document.createElement('li');
+      // add message to the elements text
+      li.innerText = message;
+      // add to list of messages
+      messageList.append(li);
+    }
+    // watch for socket to emit a 'message'
+    socket.on('message', addMessageToHTML);
+
+    function alertUserConnected() {
+      addMessageToHTML('User connected');
+    }
+    // watch for socket to emit a 'user connected' event
+    socket.on('user connected', alertUserConnected);
   </script>
 </body>
 
