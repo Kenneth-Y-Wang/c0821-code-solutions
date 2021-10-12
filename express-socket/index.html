@@ -21,8 +21,23 @@
   </form>
   <!-- <script src="/socket.io/socket.io.js"></script> -->
   <script>
+    const form = document.querySelector('form');
+    const input = document.querySelector('input');
+    const messageList = document.querySelector('ul');
+
     const socket = io('/');
     socket.on('connection');
+
+    function sendMessage(e) {
+      // prevent form submission refreshing page
+      e.preventDefault();
+      // send input value to server as type 'message'
+      socket.emit('message', input.value);
+      // reset input value
+      input.value = '';
+    }
+
+    form.addEventListener('submit', sendMessage);
   </script>
 </body>
 

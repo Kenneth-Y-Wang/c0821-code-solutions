@@ -15,4 +15,8 @@ server.listen(3000, () => {
 
 io.on('connection', function (socket) {
   console.log('socket connected:', socket.id);
+  io.emit('user connected');
+  socket.on('message', function (msg) {
+    io.emit('message', msg);
+  });
 });
