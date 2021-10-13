@@ -14,7 +14,7 @@
 
 <body>
 
-    <!-- <div class="modal-holder">
+    <div class="modal-holder">
      <div class="modal-block">
       <h1>Type Name to Start</h1>
       <form class="login">
@@ -22,18 +22,20 @@
         <button class="submit-button" type="submit">START</button>
       </form>
      </div>
-    </div> -->
-    <h1>Socket Chat App</h1>
-    <div id="tiny-chat">
-      <div id="tiny-window">
-        <div id="output"></div>
-        <div id="feedback"></div>
+    </div>
+    <div class="main hidden">
+      <h1>Try out chatting room</h1>
+      <div id="tiny-chat">
+        <div id="tiny-window">
+          <div id="output"></div>
+          <div id="feedback"></div>
+        </div>
+        <form class="chatForm">
+          <!-- <input id="handle" type="text" placeholder="User Name" /> -->
+          <input id="message" type="text" placeholder="Message" />
+          <button id="send">Send</button>
+        </form>
       </div>
-      <form>
-        <input id="handle" type="text" placeholder="User Name" />
-        <input id="message" type="text" placeholder="Message" />
-        <button id="send">Send</button>
-      </form>
     </div>
 
   <!-- <h1>Our Socket.io Chat Application</h1>

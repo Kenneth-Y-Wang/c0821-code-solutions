@@ -15,12 +15,14 @@ server.listen(3000, () => {
 
 io.on('connection', function (socket) {
   console.log('socket connected:', socket.id);
-  io.emit('user connected');
+  // io.emit('user connected');
   socket.on('chat', function (msg) {
     console.log(msg);
     io.emit('chat', msg);
   });
-
+  socket.on('login', function (message) {
+    io.emit('login', message);
+  });
   socket.on('typing', function (data) {
     socket.broadcast.emit('typing', data);
   });

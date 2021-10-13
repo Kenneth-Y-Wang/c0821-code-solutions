@@ -7,19 +7,28 @@ const feedback = document.querySelector('#feedback');
 const handle = document.getElementById('handle');
 const btn = document.getElementById('send');
 const output = document.getElementById('output');
-const $form = document.querySelector('form');
-// const $modal = document.querySelector('.login');
-// let user = '';
-// const $login = document.querySelector('.modal-holder');
+const $form = document.querySelector('.chatForm');
+const $modal = document.querySelector('.login');
+let user = '';
+const $login = document.querySelector('.modal-holder');
+const $main = document.querySelector('.main');
 
-// $modal.addEventListener('submit', function () {
-//   const name = $modal.elements.username.value;
-//   for (let i = 0; i < name.length; i++) {
-//     user += name[i];
-//   }
-//   $login.className = 'modal-holder hidden';
+$modal.addEventListener('submit', function () {
+  event.preventDefault();
+  const name = $modal.elements.username.value;
+  for (let i = 0; i < name.length; i++) {
+    user += name[i];
+  }
+  socket.emit('login', user);
+  // socket.on('user connected', function () {
+  //   feedback.innerHTML = '<p><em>' + name + ' Connected! </em></p>';
+  // });
+  console.log(name);
+  console.log(user);
+  $login.className = 'modal-holder hidden';
+  $main.className = 'main';
 
-// });
+});
 
 // console.log(time);
 // console.log(typeof time);
@@ -37,7 +46,7 @@ $form.addEventListener('submit', function () {
   }
   socket.emit('chat', {
     message: message.value,
-    handle: handle.value,
+    handle: user,
     time: time
   });
   message.value = '';
@@ -45,20 +54,25 @@ $form.addEventListener('submit', function () {
 
 socket.on('chat', function (data) {
   feedback.innerHTML = '';
-  output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '( ' + data.time + ' )</p>';
+  output.innerHTML += '<p><strong>' + data.handle + ': </strong>' + data.message + '<em> (' + data.time + ')</em></p>';
+  // output.scrollTop = output.scrollHeight;
 });
 
 message.addEventListener('keypress', function () {
-  socket.emit('typing', handle.value);
+  socket.emit('typing', user);
 });
 
 socket.on('typing', function (data) {
   feedback.innerHTML = '<p><em>' + data + ' is typing a message...</em></p>';
 });
 
-socket.on('user connected', function () {
-  feedback.innerHTML = '<p><em>User Connected! </em></p>';
+socket.on('login', function (message) {
+  feedback.innerHTML = '<p><em>' + message + ' Connected! </em></p>';
 });
+// socket.on('user connected', function () {
+//   feedback.innerHTML = '<p><em>' + user + ' Connected! </em></p>';
+// });
+
 // function sendMessage(e) {
 //   // prevent form submission refreshing page
 //   e.preventDefault();
