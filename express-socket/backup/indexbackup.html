@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Socket.io Example</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+</head>
+
+<body>
+
+  <div class="modal-holder">
+    <div class="modal-block">
+      <h1>Type Name to Start</h1>
+      <form class="login">
+        <input name="username" id="user-name" type="text">
+        <button class="submit-button" type="submit">START</button>
+      </form>
+    </div>
+  </div>
+  <div class="main hidden">
+    <h1>Try out chatting room</h1>
+    <div id="tiny-chat">
+      <div id="tiny-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
+      <form class="chatForm">
+        <!-- <input id="handle" type="text" placeholder="User Name" /> -->
+        <input id="message" type="text" placeholder="Message" />
+        <button id="send">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- <h1>Our Socket.io Chat Application</h1>
+  <div>
+    <h2>Messages</h2>
+    <ul></ul>
+  </div>
+  <form action="">
+    <input type="text" />
+    <button>Send</button>
+  </form> -->
+  <!-- <script src="/socket.io/socket.io.js"></script> -->
+
+  <script src="main.js"></script>
+
+
+</body>
+
+</html>
