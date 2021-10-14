@@ -48,11 +48,7 @@ app.post('/api/grades', (req, res) => {
     res.status(400).json({ error: 'course is a required field' });
 
   } else {
-    const value = [];
-    for (const key in input) {
-      value.push(input[key]);
-    }
-    // console.log(value);
+    const value = [input.name, input.course, input.score];
 
     const sql = `
    insert into "grades" ("name","course","score")
@@ -92,11 +88,7 @@ app.put('/api/grades/:gradeId', (req, res) => {
     res.status(400).json({ error: 'course is a required field' });
 
   } else {
-    const value = [];
-    for (const key in input) {
-      value.push(input[key]);
-    }
-    value.push(gradeId);
+    const value = [input.name, input.course, input.score, gradeId];
 
     const sql = `
     update "grades"
