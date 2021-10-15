@@ -18,8 +18,17 @@ console.log('evenNumbers:', evenNumbers);
 const overFive = numbers.filter(num => num > 5);
 console.log('overFive:', overFive);
 
-const startWithE = names.filter(name => name.startsWith('E'));
+const startWithE = names.filter(getName);
 console.log('startWithE:', startWithE);
 
 const haveD = names.filter(name => name.includes('D') || name.includes('d'));
 console.log('haveD:', haveD);
+
+function getName(name) {
+  if (name.startsWith('E') === true) {
+    return name;
+  } else {
+    return false;
+  }
+
+}
