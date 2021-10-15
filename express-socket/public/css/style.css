@@ -15,9 +15,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Jura', sans-serif;
   font-size: 16px;
-  background: var(--light-color);
+  background-image: url(../../image/5397397-wire-wallpaper-music-wallpapers-music-background-guitar-music-band-play-knob-plug-output-technology-cable-black-and-white-guitar-detail-jack-guitar-jack-plugged-in-plughole-song-png-images.jpg);
+  background-size: cover;
   margin: 20px;
 }
 
@@ -32,10 +33,19 @@ a {
 .btn {
   cursor: pointer;
   padding: 5px 15px;
-  background: var(--light-color);
-  color: var(--dark-color-a);
+  background: #e9ecef;
+  color: #24282c;
   border: 0;
   font-size: 17px;
+  border-radius: 5px;
+  transition-duration: 0.3s;
+  font-family: 'Jura', sans-serif;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  background-color: #6c757d;
+  color: white;
 }
 
 /* Chat Page */
@@ -45,13 +55,12 @@ a {
   background: #fff;
   margin: 30px auto;
   overflow: hidden;
+  font-family: 'Jura', sans-serif;
 }
 
 .chat-header {
-  background: var(--dark-color-a);
+  background: #343a40;
   color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -64,7 +73,7 @@ a {
 }
 
 .chat-sidebar {
-  background: var(--dark-color-b);
+  background: #262b2f;
   color: #fff;
   padding: 20px 20px 60px;
   overflow-y: scroll;
@@ -113,7 +122,7 @@ a {
 
 .chat-form-container {
   padding: 20px 30px;
-  background-color: var(--dark-color-a);
+  background-color: #343a40;
 }
 
 .chat-form-container form {
@@ -137,14 +146,14 @@ a {
 .join-header {
   text-align: center;
   padding: 20px;
-  background: var(--dark-color-a);
+  background: #343a40;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .join-main {
   padding: 30px 40px;
-  background: var(--dark-color-b);
+  background: #262b2f;
 }
 
 .join-main p {

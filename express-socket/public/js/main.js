@@ -80,6 +80,11 @@ function outputUsers(users) {
     userList.appendChild(li);
   });
 }
+// function outputUsers(users){
+//   userList.innerHTML=`
+//   ${users.map(user=> `<li>${user.username}</li>`).join('')}
+//   `;
+// }
 
 // Prompt the user before leave chat room
 document.getElementById('leave-btn').addEventListener('click', () => {
