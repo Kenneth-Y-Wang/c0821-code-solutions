@@ -23,14 +23,13 @@ console.log('sum:', sum);
 const product = numbers.reduce((numberP, numberC) => numberP * numberC);
 console.log('product:', product);
 
-const initial = 0;
 const balance = account.reduce((numberP, numberC) => {
   if (numberC.type === 'deposit') {
     return numberP + numberC.amount;
   } else {
     return numberP - numberC.amount;
   }
-}, initial);
+}, 0);
 console.log('balance:', balance);
 
 const composite = traits.reduce((numberP, numberC) => Object.assign(numberP, numberC), {});
