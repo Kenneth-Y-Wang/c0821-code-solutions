@@ -17,8 +17,6 @@ const io = socketio(server);
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
-
 // Run when client connects
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
@@ -27,14 +25,14 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit('message', formatMessage('ThriveVox', 'Welcome to ThriveVox!'));
 
     // Broadcast when a user connects
     socket.broadcast
       .to(user.room)
       .emit(
         'message',
-        formatMessage(botName, `${user.username} has joined the chat`)
+        formatMessage('ThriveVox', `${user.username} has joined the chat`)
       );
 
     // Send users and room info
@@ -51,6 +49,15 @@ io.on('connection', socket => {
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
+  // Listen for typing status
+  socket.on('typing', () => {
+
+    const user = getCurrentUser(socket.id);
+    socket.broadcast.to(user.room).emit(
+      'typing',
+      formatMessage(user.username, ' is typing a message...')
+    );
+  });
   // Runs when client disconnects
   socket.on('disconnect', () => {
     const user = userLeave(socket.id);
@@ -58,7 +65,7 @@ io.on('connection', socket => {
     if (user) {
       io.to(user.room).emit(
         'message',
-        formatMessage(botName, `${user.username} has left the chat`)
+        formatMessage('ThriveVox', `${user.username} has left the chat`)
       );
 
       // Send users and room info

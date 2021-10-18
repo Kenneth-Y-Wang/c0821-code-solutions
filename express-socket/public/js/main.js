@@ -2,6 +2,8 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+const $messageInput = document.querySelector('#msg');
+const $statusBar = document.querySelector('.typing-status');
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -23,6 +25,7 @@ socket.on('roomUsers', ({ room, users }) => {
 socket.on('message', message => {
   console.log(message);
   outputMessage(message);
+  $statusBar.textContent = '';
 
   // Scroll down
   chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -49,6 +52,16 @@ chatForm.addEventListener('submit', e => {
   e.target.elements.msg.focus(); // focus on the empty input
 });
 
+// typing status
+
+$messageInput.addEventListener('keypress', () => {
+  socket.emit('typing');
+});
+
+socket.on('typing', message => {
+  $statusBar.textContent = `${message.username}${message.text}`;
+});
+
 // Output message to DOM
 function outputMessage(message) {
   const div = document.createElement('div');
@@ -57,7 +70,7 @@ function outputMessage(message) {
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = message.username;
-  p.innerHTML += `<span>${message.time}</span>`;
+  p.innerHTML += `<span> ${message.time}</span>`;
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
