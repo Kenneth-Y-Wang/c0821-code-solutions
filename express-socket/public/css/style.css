@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
-:root {
-  --dark-color-a: #667aff;
-  --dark-color-b: #7386ff;
-  --light-color: #e6e9ff;
-  --success-color: #5cb85c;
-  --error-color: #d9534f;
-}
 
 * {
   box-sizing: border-box;
@@ -15,11 +6,13 @@
 }
 
 body {
-  font-family: 'Jura', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-size: 16px;
-  background-image: url(../image/5397397-wire-wallpaper-music-wallpapers-music-background-guitar-music-band-play-knob-plug-output-technology-cable-black-and-white-guitar-detail-jack-guitar-jack-plugged-in-plughole-song-png-images.jpg);
+  background-image: url(../image/150-1508074_black-and-white-music-headphones-life-hd-grayscale.jpg);
   background-size: cover;
   margin: 20px;
+  height: 100vh;
+  background-position: center;
 }
 
 ul {
@@ -62,7 +55,7 @@ a {
   background: #fff;
   margin: 30px auto;
   overflow: hidden;
-  font-family: 'Jura', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .chat-header {
@@ -114,6 +107,14 @@ h2 {
   padding: 30px;
   max-height: 500px;
   overflow-y: scroll;
+  font-family: 'Jura', sans-serif;
+  border: 2px solid #343a40;
+}
+
+::placeholder,
+input,
+select {
+  font-family: 'Jura', sans-serif;
 }
 
 .chat-messages .message {
@@ -124,7 +125,7 @@ h2 {
   overflow-wrap: break-word;
 }
 
-.chat-messages .message .meta {
+.chat-messages .message .sub {
   font-size: 15px;
   font-weight: bold;
   color: #5674bd;
@@ -132,7 +133,7 @@ h2 {
   margin-bottom: 7px;
 }
 
-.chat-messages .message .meta span {
+.chat-messages .message .sub span {
   color: #6c757d;
 }
 

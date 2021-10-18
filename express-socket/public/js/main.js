@@ -68,7 +68,7 @@ function outputMessage(message) {
   div.classList.add('message');
   // div.setAttribute('class','message');
   const p = document.createElement('p');
-  p.classList.add('meta');
+  p.classList.add('sub');
   p.innerText = message.username;
   p.innerHTML += `<span> ${message.time}</span>`;
   div.appendChild(p);
