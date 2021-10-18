@@ -69,7 +69,7 @@ a {
 
 .chat-main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
 }
 
 .chat-button {
@@ -93,6 +93,8 @@ h2 {
   font-size: 20px;
   padding: 10px;
   border: 1px solid white;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .chat-sidebar h3 {
@@ -219,5 +221,13 @@ select {
 
   .chat-sidebar {
     display: none;
+  }
+
+  .chat-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .chat-header h2 {
+    font-size: 1rem;
   }
 }

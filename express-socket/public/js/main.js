@@ -1,7 +1,7 @@
-const chatForm = document.getElementById('chat-form');
-const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
+const $chatForm = document.querySelector('#chat-form');
+const $chatMessages = document.querySelector('.chat-messages');
+const $roomName = document.querySelector('#room-name');
+const $userList = document.querySelector('#users');
 const $messageInput = document.querySelector('#msg');
 const $statusBar = document.querySelector('.typing-status');
 
@@ -12,10 +12,10 @@ const { username, room } = Qs.parse(location.search, {
 
 const socket = io();
 
-// Join chatroom
+// Join chatroom and send info to backend
 socket.emit('joinRoom', { username, room });
 
-// Get room and users
+// Get room and users name when user login
 socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
@@ -23,20 +23,20 @@ socket.on('roomUsers', ({ room, users }) => {
 
 // Message from server
 socket.on('message', message => {
-  console.log(message);
+  // console.log(message);
   outputMessage(message);
   $statusBar.textContent = '';
 
   // Scroll down
-  chatMessages.scrollTop = chatMessages.scrollHeight;
+  $chatMessages.scrollTop = $chatMessages.scrollHeight;
 });
 
-// Message submit
-chatForm.addEventListener('submit', e => {
-  e.preventDefault();
+// Message submit and send to the server
+$chatForm.addEventListener('submit', event => {
+  event.preventDefault();
 
   // Get message text
-  let msg = e.target.elements.msg.value;
+  let msg = event.target.elements.msg.value;
 
   msg = msg.trim();
 
@@ -48,8 +48,8 @@ chatForm.addEventListener('submit', e => {
   socket.emit('chatMessage', msg);
 
   // Clear input
-  e.target.elements.msg.value = '';
-  e.target.elements.msg.focus(); // focus on the empty input
+  event.target.elements.msg.value = '';
+  event.target.elements.msg.focus(); // focus on the empty input
 });
 
 // typing status
@@ -62,35 +62,36 @@ socket.on('typing', message => {
   $statusBar.textContent = `${message.username}${message.text}`;
 });
 
-// Output message to DOM
+// render message
 function outputMessage(message) {
-  const div = document.createElement('div');
-  div.classList.add('message');
-  // div.setAttribute('class','message');
-  const p = document.createElement('p');
-  p.classList.add('sub');
-  p.innerText = message.username;
-  p.innerHTML += `<span> ${message.time}</span>`;
-  div.appendChild(p);
-  const para = document.createElement('p');
-  para.classList.add('text');
-  para.innerText = message.text;
-  div.appendChild(para);
-  document.querySelector('.chat-messages').appendChild(div);
+  const $div = document.createElement('div');
+  $div.setAttribute('class', 'message');
+
+  const $p = document.createElement('p');
+  $p.setAttribute('class', 'sub');
+  $p.textContent = message.username;
+  $p.innerHTML += `<span> ${message.time}</span>`;
+  $div.appendChild($p);
+
+  const $text = document.createElement('p');
+  $text.setAttribute('class', 'text');
+  $text.textContent = message.text;
+  $div.appendChild($text);
+  document.querySelector('.chat-messages').appendChild($div);
 }
 
-// Add room name to DOM
+// renderRoom
 function outputRoomName(room) {
-  roomName.innerText = room;
+  $roomName.textContent = room;
 }
 
-// Add users to DOM
+// renderUser
 function outputUsers(users) {
-  userList.innerHTML = '';
+  $userList.innerHTML = '';
   users.forEach(user => {
-    const li = document.createElement('li');
-    li.innerText = user.username;
-    userList.appendChild(li);
+    const $li = document.createElement('li');
+    $li.textContent = user.username;
+    $userList.appendChild($li);
   });
 }
 // function outputUsers(users){
