@@ -1,0 +1,35 @@
+button {
+  padding: 0.25rem 0.5rem;
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+  border: 1.5px solid #4a4e69;
+  box-shadow: 5px 5px 15px -2px #000;
+}
+
+.level-one {
+  background-color: #3c096c;
+}
+
+.level-two {
+  background-color: #5a189a;
+}
+
+.level-three {
+  background-color: #ef476f;
+}
+
+.level-four {
+  background-color: #f3722c;
+  color: black;
+}
+
+.level-five {
+  background-color: #ffd60a;
+  color: black;
+}
+
+.level-six {
+  background-color: white;
+  color: black;
+}
