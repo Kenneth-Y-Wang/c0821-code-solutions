@@ -51,7 +51,7 @@ export default class StopWatch extends React.Component {
     } else {
       return (
       <div className="clock-display">
-          <div className="clock" onClick={this.reset}>
+          <div className="clock" >
           <h1>{this.state.time}</h1>
         </div>
         <div className="switch" onClick={this.pause}><i className="fas fa-pause"></i></div>
