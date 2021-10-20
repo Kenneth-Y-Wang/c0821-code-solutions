@@ -1,0 +1,45 @@
+.switch {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  background-color: white;
+}
+
+.switch-back {
+  height: 40px;
+  width: 80px;
+  position: relative;
+  border-radius: 20px;
+  border: 1px black solid;
+}
+
+.back-on {
+  background-color: #6a994e;
+}
+
+.switch-on {
+  top: 0;
+  right: 0;
+}
+
+.back-off {
+  background-color: #d3d3d3;
+}
+
+.switch-off {
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 2rem;
+  margin-top: 0.25rem;
+}
+
+.row {
+  display: flex;
+}
