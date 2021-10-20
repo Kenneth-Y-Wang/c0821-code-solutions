@@ -3,17 +3,21 @@
   width: 200px;
   border-radius: 100px;
   font-weight: bold;
-  border: 2px solid black;
+  border: 3px solid black;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 5rem auto;
+  font-size: 1.5rem;
+  color: #3e5c76;
+  box-shadow: -10px 0 13px -7px #000, 10px 0 13px -7px #000, 5px 5px 15px -13px rgba(0, 0, 0, 0);
+  font-family: 'Architects Daughter', cursive;
 }
 
 .switch {
   font-size: 3rem;
-  color: black;
+  color: #3e5c76;
 }
 
 .clock-display {

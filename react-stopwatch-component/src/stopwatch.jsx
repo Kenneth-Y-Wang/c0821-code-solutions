@@ -6,6 +6,7 @@ export default class StopWatch extends React.Component {
     this.state = { time: 0, ticking: false };
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   tick() {
@@ -31,12 +32,17 @@ export default class StopWatch extends React.Component {
     }));
   }
 
+  reset() {
+    clearInterval(this.timeID);
+    this.setState({ time: 0, ticking: false });
+  }
+
   render() {
     const ticking = this.state.ticking;
     if (!ticking) {
       return (
       <div className="clock-display">
-        <div className="clock">
+        <div className="clock" onClick={this.reset}>
           <h1>{this.state.time}</h1>
         </div>
         <div className="switch" onClick={this.play}><i className="fas fa-play"></i></div>
@@ -45,7 +51,7 @@ export default class StopWatch extends React.Component {
     } else {
       return (
       <div className="clock-display">
-        <div className="clock">
+          <div className="clock" onClick={this.reset}>
           <h1>{this.state.time}</h1>
         </div>
         <div className="switch" onClick={this.pause}><i className="fas fa-pause"></i></div>
