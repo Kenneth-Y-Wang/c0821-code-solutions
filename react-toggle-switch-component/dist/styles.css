@@ -1,38 +1,43 @@
 .switch {
   height: 40px;
   width: 40px;
-  border: 2px solid black;
-  margin: 1rem 0;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  background-color: white;
 }
 
-.left-on {
+.switch-back {
+  height: 40px;
+  width: 80px;
+  position: relative;
+  border-radius: 20px;
+  border: 1px black solid;
+}
+
+.back-on {
   background-color: #6a994e;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
 }
 
-.right-on {
-  background-color: white;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
+.switch-on {
+  top: 0;
+  right: 0;
 }
 
-.left-off {
-  background-color: white;
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-}
-
-.right-off {
+.back-off {
   background-color: #d3d3d3;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
+}
+
+.switch-off {
+  top: 0;
+  left: 0;
 }
 
 h1 {
   font-weight: bold;
   display: inline-block;
   margin-left: 2rem;
+  margin-top: 0.25rem;
 }
 
 .row {
