@@ -33,8 +33,9 @@ export default class StopWatch extends React.Component {
   }
 
   reset() {
+
     clearInterval(this.timeID);
-    this.setState({ time: 0, ticking: false });
+    this.setState({ time: 0 });
   }
 
   render() {
