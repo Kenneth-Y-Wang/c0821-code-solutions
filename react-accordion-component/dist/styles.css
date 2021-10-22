@@ -8,11 +8,12 @@
   padding: 0.25rem 0.5rem;
   vertical-align: center;
   background-color: #adb5bd;
+  cursor: pointer;
 }
 
 .topic-content {
   width: 300px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: white;
   border: 2px solid black;
 }
