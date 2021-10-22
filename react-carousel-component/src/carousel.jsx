@@ -10,22 +10,13 @@ export default class Carousel extends React.Component {
   }
 
   autoRun() {
-    this.setState(state => ({
-      index: state.index + 1
-    }));
-    if (this.state.index === this.props.pics.length + 1) {
-      this.setState({ index: 1 });
-    }
+    this.setState(this.state.index === this.props.pics.length ? { index: 1 } : { index: this.state.index + 1 });
 
   }
 
   rightClick() {
-    this.setState(state => ({
-      index: state.index + 1
-    }));
-    if (this.state.index === this.props.pics.length) {
-      this.setState({ index: 1 });
-    }
+    this.setState(this.state.index === this.props.pics.length ? { index: 1 } : { index: this.state.index + 1 });
+
     clearInterval(this.timeID);
     this.timeID = setInterval(
       () => this.autoRun(),
@@ -35,12 +26,9 @@ export default class Carousel extends React.Component {
   }
 
   leftClick() {
-    this.setState(state => ({
-      index: state.index - 1
-    }));
-    if (this.state.index === 1) {
-      this.setState({ index: this.props.pics.length });
-    }
+
+    this.setState(this.state.index === 1 ? { index: this.props.pics.length } : { index: this.state.index - 1 });
+
     clearInterval(this.timeID);
     this.timeID = setInterval(
       () => this.autoRun(),
@@ -78,10 +66,10 @@ export default class Carousel extends React.Component {
     );
     return (
       <div className="carousel-container">
-        <div className=" arrow-holder column-one-fifth">
+        <div className=" arrow-holder column-one-tenth">
           <i onClick={this.leftClick} className="far fa-caret-square-left font-style transition"></i>
         </div>
-        <div className=" column-three-fifth pic-column">
+        <div className=" column-four-fifth pic-column">
           <div className="pic-holder">
             {listPics}
           </div>
@@ -89,7 +77,7 @@ export default class Carousel extends React.Component {
             {listButtons}
           </div>
         </div>
-        <div className=" arrow-holder column-one-fifth">
+        <div className=" arrow-holder column-one-tenth">
           <i onClick={this.rightClick} className="far fa-caret-square-right font-style transition"></i>
         </div>
       </div>

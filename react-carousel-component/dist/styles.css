@@ -1,13 +1,13 @@
-.column-one-fifth,
-.column-three-fifth {
+.column-one-tenth,
+.column-four-fifth {
   padding: 0 0.5rem;
 }
 
-.column-one-fifth {
+.column-one-tenth {
   width: 10%;
 }
 
-.column-three-fifth {
+.column-four-fifth {
   width: 80%;
 }
 
