@@ -1,0 +1,34 @@
+body {
+  font-family: 'Architects Daughter', cursive;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  display: flex;
+}
+
+h5 {
+  color: red;
+  margin-top: 0.25rem;
+}
+
+input {
+  border: 2px solid black;
+}
+
+.mg-lf-50 {
+  margin-left: 0.5rem;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: #2a9d8f;
+}
