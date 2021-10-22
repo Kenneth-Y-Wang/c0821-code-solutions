@@ -21,17 +21,17 @@ export default class ValidatedInput extends React.Component {
   getClass() {
     if (this.state.value === '') {
       return {
-        signContent: <i className = "fas fa-times"></i>,
+        signContent: <i className = "fas fa-times color-red"></i>,
         textContent: 'A password is required.'
       };
     } else if (this.state.value.length < 8) {
       return {
-        signContent: <i className="fas fa-times"></i>,
+        signContent: <i className="fas fa-times color-red"></i>,
         textContent: 'Your password is too short.'
       };
     } else {
       return {
-        signContent: <i className="fas fa-check"></i>,
+        signContent: <i className="fas fa-check color-green"></i>,
         textContent: ''
       };
     }
@@ -44,7 +44,7 @@ export default class ValidatedInput extends React.Component {
         <label htmlFor="password" >Password</label>
         <div className="row">
         <input id="password" name="password" type="text" value={this.state.value} onChange={this.handleChange} />
-        <div>{signContent}</div>
+        <div className="mg-lf-50">{signContent}</div>
         </div>
         <h5>{textContent}</h5>
       </form>

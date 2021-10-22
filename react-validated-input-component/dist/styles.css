@@ -12,24 +12,23 @@ label {
   display: flex;
 }
 
-.fas,
 h5 {
   color: red;
-}
-
-.fa-times,
-.fa-check {
-  margin-left: 0.5rem;
-}
-
-h5 {
   margin-top: 0.25rem;
-}
-
-.fa-check {
-  color: #2a9d8f;
 }
 
 input {
   border: 2px solid black;
+}
+
+.mg-lf-50 {
+  margin-left: 0.5rem;
+}
+
+.color-red {
+  color: red;
+}
+
+.color-green {
+  color: #2a9d8f;
 }
