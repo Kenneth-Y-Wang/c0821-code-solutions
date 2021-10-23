@@ -15,24 +15,14 @@ export default class ToggleSwitch extends React.Component {
 
   render() {
     const isClicked = this.state.isClicked;
-    if (isClicked) {
-      return (
+
+    return (
      <div className="row">
-        <div className="switch-back back-on">
-          <div onClick={this.handleClick} className="switch switch-on"></div>
+        <div className={isClicked ? 'switch-back back-on' : 'switch-back back-off'}>
+          <div onClick={this.handleClick} className={isClicked ? 'switch switch-on' : 'switch switch-off'}></div>
         </div>
-        <h1>ON</h1>
+        <h1>{isClicked ? 'ON' : 'OFF'}</h1>
      </div>
-      );
-    } else {
-      return (
-        <div className="row">
-          <div className="switch-back back-off">
-            <div onClick={this.handleClick} className="switch switch-off"></div>
-          </div>
-          <h1>OFF</h1>
-        </div>
-      );
-    }
+    );
   }
 }
