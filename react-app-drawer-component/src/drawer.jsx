@@ -19,11 +19,11 @@ export default class Drawer extends React.Component {
 
   render() {
     const isOpen = this.state.isOpen;
-    if (!isOpen) {
-      return (
-      <div className="drawer-holder">
-        <div className="switch-button" onClick={this.switch}><i className="fas fa-bars"></i></div>
-        <div className="drawer">
+
+    return (
+        <div className={!isOpen ? 'drawer-holder' : 'drawer-holder holder-on'} onClick={!isOpen ? null : this.switch}>
+        <div className="switch-button" onClick={!isOpen ? this.switch : null}><i className="fas fa-bars"></i></div>
+          <div className={!isOpen ? 'drawer' : 'drawer drawer-on'} >
           <h1>Menu</h1>
           <a>About</a>
           <a>Find a Band</a>
@@ -31,20 +31,7 @@ export default class Drawer extends React.Component {
           <a>What do You Like</a>
         </div>
       </div>
-      );
-    } else {
-      return (
-        <div className="drawer-holder holder-on" onClick={this.switch}>
-          <div className="switch-button" ><i className="fas fa-bars"></i></div>
-          <div className="drawer drawer-on">
-            <h1 >Menu</h1>
-            <a >About</a>
-            <a >Find a Band</a>
-            <a >Want to Chat</a>
-            <a >What do You Like</a>
-          </div>
-        </div>
-      );
-    }
+    );
+
   }
 }
