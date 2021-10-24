@@ -33,31 +33,23 @@ export default class StopWatch extends React.Component {
   }
 
   reset() {
-
-    clearInterval(this.timeID);
-    this.setState({ time: 0 });
+    if (!this.state.ticking) {
+      clearInterval(this.timeID);
+      this.setState({ time: 0 });
+    }
   }
 
   render() {
     const ticking = this.state.ticking;
-    if (!ticking) {
-      return (
+
+    return (
       <div className="clock-display">
         <div className="clock" onClick={this.reset}>
           <h1>{this.state.time}</h1>
         </div>
-        <div className="switch" onClick={this.play}><i className="fas fa-play"></i></div>
+          <div className="switch" onClick={!ticking ? this.play : this.pause}><i className={!ticking ? 'fas fa-play' : 'fas fa-pause'}></i></div>
       </div>
-      );
-    } else {
-      return (
-      <div className="clock-display">
-          <div className="clock" >
-          <h1>{this.state.time}</h1>
-        </div>
-        <div className="switch" onClick={this.pause}><i className="fas fa-pause"></i></div>
-      </div>
-      );
-    }
+    );
+
   }
 }
