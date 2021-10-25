@@ -1,0 +1,13 @@
+.image-display {
+  margin: 5rem;
+  text-align: center;
+}
+
+img {
+  width: 500px;
+  object-fit: fill;
+}
+
+h1 {
+  text-align: center;
+}
