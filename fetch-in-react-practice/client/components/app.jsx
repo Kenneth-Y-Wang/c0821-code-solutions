@@ -96,8 +96,9 @@ export default class App extends React.Component {
       .then(data => {
         for (let i = 0; i < this.state.todos.length; i++) {
           if (data.todoId === this.state.todos[i].todoId) {
-            this.state.todos.splice(i, 1, data);
-            this.setState({ todos: this.state.todos });
+            const newState = this.state.todos.slice(0, i).concat(data, this.state.todos.slice(i + 1));
+            this.setState({ todos: newState });
+            break;
           }
         }
       })
@@ -119,8 +120,9 @@ export default class App extends React.Component {
 
     for (let i = 0; i < this.state.todos.length; i++) {
       if (todoId === this.state.todos[i].todoId) {
-        this.state.todos.splice(i, 1);
-        this.setState({ todos: this.state.todos });
+        const newState = this.state.todos.slice(0, i).concat(this.state.todos.slice(i + 1));
+        this.setState({ todos: newState });
+        break;
       }
 
     }
