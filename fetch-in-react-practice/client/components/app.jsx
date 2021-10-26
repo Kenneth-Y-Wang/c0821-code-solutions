@@ -8,7 +8,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       todos: [],
-      editTodo: {}
+      editTodo: null
     };
     this.addTodo = this.addTodo.bind(this);
     this.toggleCompleted = this.toggleCompleted.bind(this);
@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.toEdit = this.toEdit.bind(this);
     this.editChange = this.editChange.bind(this);
     this.editSubmit = this.editSubmit.bind(this);
+    this.toCancel = this.toCancel.bind(this);
   }
 
   componentDidMount() {
@@ -160,16 +161,22 @@ export default class App extends React.Component {
     event.preventDefault();
   }
 
+  toCancel() {
+    this.setState({ editTodo: null });
+    console.log(this.state.editTodo);
+  }
+
   render() {
     return (
       <div className="container">
         <div className={!this.state.editTodo ? 'modal-holder hidden' : ' modal-holder'}>
-          <div className="modal">
+          <div className="box">
             <form onSubmit={this.editSubmit}>
-              <label>
-                New Content: <input type="text" value={this.state.editTodo.task} onChange={this.editChange} />
+              <label className="edit-label">
+                New Content: <input className="edit-input" type="text" value={!this.state.editTodo ? '' : this.state.editTodo.task} onChange={this.editChange} />
               </label>
             </form>
+            <button className="cancel" onClick={this.toCancel} >Cancel</button>
           </div>
         </div>
         <div className="row">
