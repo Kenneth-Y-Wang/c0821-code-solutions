@@ -140,11 +140,8 @@ export default class App extends React.Component {
     newEditTodo.isCompleted = current.isCompleted;
     newEditTodo.task = current.task;
     newEditTodo.todoId = todoId;
-    console.log(current);
-    console.log(newEditTodo);
 
     this.setState({ editTodo: newEditTodo });
-    console.log(this.state.editTodo);
   }
 
   editChange(event) {
@@ -159,11 +156,37 @@ export default class App extends React.Component {
 
   editSubmit(event) {
     event.preventDefault();
+    const todoId = this.state.editTodo.todoId;
+
+    const updatedTodo = {};
+    updatedTodo.task = this.state.editTodo.task;
+    updatedTodo.isCompleted = false;
+
+    fetch(`/api/todos/${todoId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedTodo)
+    })
+      .then(response => response.json())
+      .then(data => {
+        for (let i = 0; i < this.state.todos.length; i++) {
+          if (data.todoId === this.state.todos[i].todoId) {
+            const newState = this.state.todos.slice(0, i).concat(data, this.state.todos.slice(i + 1));
+            this.setState({ todos: newState, editTodo: null });
+            break;
+          }
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
   }
 
   toCancel() {
     this.setState({ editTodo: null });
-    console.log(this.state.editTodo);
   }
 
   render() {

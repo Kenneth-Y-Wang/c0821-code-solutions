@@ -67,7 +67,8 @@
 }
 
 .edit-input {
-  width: 300px;
+  width: 400px;
   margin: 0.5rem auto;
   display: block;
+  font-size: 1rem;
 }
