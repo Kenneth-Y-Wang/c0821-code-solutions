@@ -108,6 +108,50 @@ app.patch('/api/todos/:todoId', (req, res) => {
     });
 });
 
+app.put('/api/todos/:todoId', (req, res) => {
+  const todoId = parseInt(req.params.todoId, 10);
+  if (!Number.isInteger(todoId) || todoId < 1) {
+    res.status(400).json({
+      error: 'todoId must be a postive integer'
+    });
+    return;
+  }
+
+  const { task, isCompleted = false } = req.body;
+  if (!task || typeof isCompleted !== 'boolean') {
+    res.status(400).json({
+      error: 'task (string) and isCompleted (boolean) are required fields'
+    });
+    return;
+  }
+  const sql = `
+  update "todos"
+     set "task"=$1,
+         "isCompleted"=$2
+    where "todoId"=$3
+    returning *
+ `;
+
+  const params = [task, isCompleted, todoId];
+  db.query(sql, params)
+    .then(result => {
+      const [todo] = result.rows;
+      if (!todo) {
+        res.status(404).json({
+          error: `cannot find todo with todoId ${todoId}`
+        });
+        return;
+      }
+      res.json(todo);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'an unexpected error occurred'
+      });
+    });
+
+});
 app.delete('/api/todos/:todoId', (req, res) => {
   const todoId = Number(req.params.todoId);
 

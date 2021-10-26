@@ -7,11 +7,15 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: []
+      todos: [],
+      editTodo: {}
     };
     this.addTodo = this.addTodo.bind(this);
     this.toggleCompleted = this.toggleCompleted.bind(this);
     this.toDelete = this.toDelete.bind(this);
+    this.toEdit = this.toEdit.bind(this);
+    this.editChange = this.editChange.bind(this);
+    this.editSubmit = this.editSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -128,14 +132,51 @@ export default class App extends React.Component {
     }
   }
 
+  toEdit(todoId) {
+    const newEditTodo = {};
+    const current = this.state.todos.find(todo => todo.todoId === todoId);
+
+    newEditTodo.isCompleted = current.isCompleted;
+    newEditTodo.task = current.task;
+    newEditTodo.todoId = todoId;
+    console.log(current);
+    console.log(newEditTodo);
+
+    this.setState({ editTodo: newEditTodo });
+    console.log(this.state.editTodo);
+  }
+
+  editChange(event) {
+    const updatedEditTodo = {};
+    updatedEditTodo.todoId = this.state.editTodo.todoId;
+    updatedEditTodo.task = event.target.value;
+    updatedEditTodo.isCompleted = false;
+
+    this.setState({ editTodo: updatedEditTodo });
+
+  }
+
+  editSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="container">
+        <div className={!this.state.editTodo ? 'modal-holder hidden' : ' modal-holder'}>
+          <div className="modal">
+            <form onSubmit={this.editSubmit}>
+              <label>
+                New Content: <input type="text" value={this.state.editTodo.task} onChange={this.editChange} />
+              </label>
+            </form>
+          </div>
+        </div>
         <div className="row">
           <div className="col pt-5">
             <PageTitle text="Todo App"/>
             <TodoForm onSubmit={this.addTodo}/>
-            <TodoList todos={this.state.todos} toDelete= {this.toDelete} toggleCompleted={this.toggleCompleted}/>
+            <TodoList todos={this.state.todos} toDelete= {this.toDelete} toEdit= {this.toEdit} toggleCompleted={this.toggleCompleted}/>
           </div>
         </div>
       </div>

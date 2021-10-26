@@ -19,7 +19,10 @@ function Todo(props) {
           { task }
         </label>
       </div>
-      <button onClick={() => props.toDelete(todoId)} className="delete">DELETE</button>
+      <div className="row">
+        <button onClick={() => props.toEdit(todoId)} className="edit">EDIT</button>
+        <button onClick={() => props.toDelete(todoId)} className="delete">DELETE</button>
+      </div>
     </li>
   );
 }
@@ -34,7 +37,8 @@ function TodoList(props) {
               key={todo.todoId}
               todo={todo}
               toggleCompleted={props.toggleCompleted}
-              toDelete={props.toDelete} />
+              toDelete={props.toDelete}
+              toEdit={props.toEdit} />
           );
         })
       }
