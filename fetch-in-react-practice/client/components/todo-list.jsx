@@ -7,7 +7,7 @@ function Todo(props) {
     ? 'form-check-label is-completed'
     : 'form-check-label';
   return (
-    <li className="list-group-item">
+    <li className="list-group-item justify-between">
       <div className="form-check">
         <input
           id={idAttr}
@@ -19,6 +19,7 @@ function Todo(props) {
           { task }
         </label>
       </div>
+      <button onClick={() => props.toDelete(todoId)} className="delete">DELETE</button>
     </li>
   );
 }
@@ -32,7 +33,8 @@ function TodoList(props) {
             <Todo
               key={todo.todoId}
               todo={todo}
-              toggleCompleted={props.toggleCompleted}/>
+              toggleCompleted={props.toggleCompleted}
+              toDelete={props.toDelete} />
           );
         })
       }

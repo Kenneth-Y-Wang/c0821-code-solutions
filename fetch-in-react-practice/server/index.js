@@ -108,6 +108,44 @@ app.patch('/api/todos/:todoId', (req, res) => {
     });
 });
 
+app.delete('/api/todos/:todoId', (req, res) => {
+  const todoId = Number(req.params.todoId);
+
+  if (!Number.isInteger(todoId) || todoId <= 0) {
+    res.status(400).json({
+      error: 'todoId must be a positive integer'
+    });
+  } else {
+    const sql = `
+    delete from "todos"
+     where "todoId" = $1
+     returning *
+    `;
+    const value = [todoId];
+
+    db.query(sql, value)
+      .then(result => {
+        const todo = result.rows[0];
+        if (!todo) {
+
+          res.status(404).json({
+            error: `Cannot find grade with todoId ${todoId}`
+          });
+        } else {
+
+          res.sendStatus(204);
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({
+          error: 'An unexpected error occurred.'
+        });
+      });
+
+  }
+});
+
 app.listen(process.env.PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`express server listening on port ${process.env.PORT}`);

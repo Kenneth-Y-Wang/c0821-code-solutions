@@ -3,3 +3,18 @@
   font-style: italic;
   text-decoration: line-through;
 }
+
+.delete {
+  font-size: 0.8rem;
+  padding: 0.05rem 0.25rem;
+  margin-left: 0.5rem;
+  color: #e63946;
+  border: 1px solid #e63946;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.justify-between {
+  justify-content: space-between;
+  display: flex;
+}

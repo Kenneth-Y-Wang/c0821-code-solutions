@@ -11,6 +11,7 @@ export default class App extends React.Component {
     };
     this.addTodo = this.addTodo.bind(this);
     this.toggleCompleted = this.toggleCompleted.bind(this);
+    this.toDelete = this.toDelete.bind(this);
   }
 
   componentDidMount() {
@@ -106,6 +107,25 @@ export default class App extends React.Component {
 
   }
 
+  toDelete(todoId) {
+    // console.log(todoId);
+    fetch(`/api/todos/${todoId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: null
+    });
+
+    for (let i = 0; i < this.state.todos.length; i++) {
+      if (todoId === this.state.todos[i].todoId) {
+        this.state.todos.splice(i, 1);
+        this.setState({ todos: this.state.todos });
+      }
+
+    }
+  }
+
   render() {
     return (
       <div className="container">
@@ -113,7 +133,7 @@ export default class App extends React.Component {
           <div className="col pt-5">
             <PageTitle text="Todo App"/>
             <TodoForm onSubmit={this.addTodo}/>
-            <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted}/>
+            <TodoList todos={this.state.todos} toDelete= {this.toDelete} toggleCompleted={this.toggleCompleted}/>
           </div>
         </div>
       </div>
