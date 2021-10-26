@@ -81,12 +81,9 @@ export default class App extends React.Component {
      * And specify the "Content-Type" header as "application/json"
      */
     const newCompleteStatus = {};
-    for (let i = 0; i < this.state.todos.length; i++) {
-      if (this.state.todos[i].todoId === todoId) {
-        newCompleteStatus.isCompleted = !this.state.todos[i].isCompleted;
-        // console.log(newCompleteStatus);
-      }
-    }
+    const current = this.state.todos.find(todo => todo.todoId === todoId);
+    newCompleteStatus.isCompleted = !current.isCompleted;
+
     fetch(`/api/todos/${todoId}`, {
       method: 'PATCH',
       headers: {
