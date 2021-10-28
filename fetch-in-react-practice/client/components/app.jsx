@@ -134,14 +134,10 @@ export default class App extends React.Component {
   }
 
   toEdit(todoId) {
-    const newEditTodo = {};
+
     const current = this.state.todos.find(todo => todo.todoId === todoId);
 
-    newEditTodo.isCompleted = current.isCompleted;
-    newEditTodo.task = current.task;
-    newEditTodo.todoId = todoId;
-
-    this.setState({ editTodo: newEditTodo });
+    this.setState({ editTodo: current });
   }
 
   editChange(event) {
