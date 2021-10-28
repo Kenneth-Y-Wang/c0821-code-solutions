@@ -1,0 +1,66 @@
+user can sign up:
+
+When the App class is rendered,  the componentDidMount method is being called
+first, the initial state of App class is the object { user: null,
+isAuthorizing: true, route: parseRoute(window.location.hash)} and the return of
+parseRoute(window.location.hash) will set the route property. because the
+window.localStorage has not been set with 'react-context-jwt', so the user property
+in this.state will still be null. we set { user, route, handleSignIn, handleSignOut }
+to the AppContext object and passed it down, so the home page will have a falsy
+this.context.user, which leads the page to sign-in/sign-up
+
+for first time user, when an user clicked sign up, the render() of the AuthForm class
+will render different welcome message, switch button and button content.(vice versa
+with clicking sign-in). During the sign-up, when user types in username and password,
+the hangleChange(event) will update the this.state username and password property
+based on the event.target.value.
+
+
+Once the enter is finished, the handleSubmit will be fired and the action varible is
+determined by the routh.path of the current window.hash, in our situation here is "sign-up".
+the fetch will perform a POST request and inside the req.body, the current updated
+username and password object will be sent. The password will be hashed first to be
+hashedpassword, and both user name and hashedpassword will be inserted to the database. once the
+fetch result returns, we dont need to do anything with the data, the window.location.hash
+will be change to "sign-in", the view will be swap to sign in right away for the sign-in process.
+
+
+user can sign in:
+
+when the page swapped to sign in, user will be typeing in the username and password,
+hangleChange(event) will be fired and the event.taget.value will update the
+this.state.username/password. once the input process is finished and user hit
+submit, the handleSubmit(event) is fired and the action variable has the value of
+sign-in. The fetch will perform a POST request to api/auth/sign-in, with the req.body
+has the value of the updated state object( with property username and password).
+if the username provided does not exist in the database, then no result array will be returning,
+the invalid login message will be sent. Else, the result.rows array will return with one
+matching object from the database containing information including username and hashedpassword.
+Then the hashedpassword will be verified with the verify method of argon2 object, if the promise
+return a boolean of true, then the payload object is formed with userId and username property
+and a token will be signed by applying the sign method of jwt object. the result object containing
+the token and user info will be send to the front end and the handleSignIn method in the AppContext
+object will be called with the arguement result object. The token will be set in the window.localStorage
+with the string name'react-context-jwt', and the user object will be set as the current state's user
+property.
+
+
+user can stay signed in:
+
+once the sign-in process is finished, the App class will rerender (same apply to refresh the page)
+and the componentDidMount() will be called right away. The token will be obtained from the getItem
+method of the localStorage property of window object. If the token is a truty value, then the inported
+decodeToken function will be called with token as the arguemernt. the return of the function will be the
+user object of the current signed-in user and the user object will be assigned to the user property of this.state
+object. the property of isAuthorizing is set to a value of false.
+
+now the user property of this.state has the truty value, the page will redirect to home page and stay there.
+
+
+user can sign out.
+
+once client clicked sign out, the handleSignOut method from the AppContext object passed down will be
+called. The 'react-context-jwt' will be removed from the window.localStorage and the user property
+of the this.state object will be set to null again. When the re-render starts, the componentDidMount()
+is called and there is no token can be obtained and the user property has a value of null. the page will
+redirect to sign-in page.
