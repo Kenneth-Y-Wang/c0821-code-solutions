@@ -14,7 +14,8 @@ export default class App extends React.Component {
     this.state = {
       user: null,
       isAuthorizing: true,
-      route: parseRoute(window.location.hash)
+      route: parseRoute(window.location.hash),
+      isOpen: false
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
@@ -29,6 +30,14 @@ export default class App extends React.Component {
     const token = window.localStorage.getItem('react-context-jwt');
     const user = token ? decodeToken(token) : null;
     this.setState({ user, isAuthorizing: false });
+  }
+
+  switch() {
+    if (event.target.matches('a') === true || event.target.matches('.container') === true || event.target.matches('.fas') === true) {
+      this.setState(state => ({
+        isOpen: !state.isOpen
+      }));
+    }
   }
 
   handleSignIn(result) {
