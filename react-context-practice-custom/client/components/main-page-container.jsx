@@ -6,11 +6,11 @@ const styles = {
   }
 };
 
-export default function PageContainer({ children }) {
+export default function MainPageContainer({ children }) {
   return (
     <div className="">
-      <div className="container-sign-in" style={styles.page}>
-        { children }
+      <div className="container" style={styles.page}>
+        {children}
       </div>
     </div>
   );

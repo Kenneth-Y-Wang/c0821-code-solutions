@@ -8,6 +8,7 @@ import NotFound from './pages/not-found';
 import Navbar from './components/navbar';
 import CustomDropdown from './components/custom-navbar';
 import PageContainer from './components/page-container';
+import MainPageContainer from './components/main-page-container';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -35,6 +36,10 @@ export default class App extends React.Component {
   }
 
   switch() {
+    if (!this.state.user) {
+      alert('Please log-in first');
+      return;
+    }
     if (event.target.matches('a') === true || event.target.matches('.overlay') === true || event.target.matches('.fas') === true) {
       this.setState(state => ({
         isOpen: !state.isOpen
@@ -73,9 +78,7 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
         <>
           <CustomDropdown switch={this.switch}/>
-          <PageContainer>
-            { this.renderPage() }
-          </PageContainer>
+          {!user ? <PageContainer>{this.renderPage()}</PageContainer> : <MainPageContainer>{this.renderPage()}</MainPageContainer>}
         </>
       </AppContext.Provider>
     );

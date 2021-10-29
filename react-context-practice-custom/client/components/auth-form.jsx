@@ -50,7 +50,7 @@ export default class AuthForm extends React.Component {
       ? 'Register'
       : 'Log In';
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="sign-in-form" onSubmit={handleSubmit}>
         <div className="mg-b-1">
           <label htmlFor="username" className="form-label">
             Username
@@ -62,6 +62,7 @@ export default class AuthForm extends React.Component {
             type="text"
             name="username"
             onChange={handleChange}
+            className="sign-in-input"
              />
         </div>
         <div className="mg-b-1">
@@ -73,7 +74,8 @@ export default class AuthForm extends React.Component {
             id="password"
             type="password"
             name="password"
-            onChange={handleChange} />
+            onChange={handleChange}
+            className="sign-in-input" />
         </div>
         <div className={action === 'sign-up' ? 'mg-b-1' : 'mg-b-1 hidden'}>
           <label htmlFor="email" className="form-label">
@@ -84,7 +86,8 @@ export default class AuthForm extends React.Component {
             id="email"
             type="email"
             name="email"
-            onChange={handleChange} />
+            onChange={handleChange}
+            className="sign-in-input"/>
         </div>
         <div className={action === 'sign-up' ? 'mg-b-1' : 'mg-b-1 hidden'}>
           <label htmlFor="Location" className="form-label">
@@ -95,7 +98,8 @@ export default class AuthForm extends React.Component {
             id="location"
             type="text"
             name="location"
-            onChange={handleChange} />
+            onChange={handleChange}
+            className="sign-in-input" />
         </div>
         <div className="form-submit-row">
           <small>
