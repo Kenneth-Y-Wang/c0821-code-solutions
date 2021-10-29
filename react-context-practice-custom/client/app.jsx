@@ -6,6 +6,7 @@ import Auth from './pages/auth';
 import Home from './pages/home';
 import NotFound from './pages/not-found';
 import Navbar from './components/navbar';
+import CustomDropdown from './components/custom-navbar';
 import PageContainer from './components/page-container';
 
 export default class App extends React.Component {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
+    this.switch = this.switch.bind(this);
   }
 
   componentDidMount() {
@@ -64,13 +66,13 @@ export default class App extends React.Component {
 
   render() {
     if (this.state.isAuthorizing) return null;
-    const { user, route } = this.state;
+    const { user, route, isOpen } = this.state;
     const { handleSignIn, handleSignOut } = this;
-    const contextValue = { user, route, handleSignIn, handleSignOut };
+    const contextValue = { user, route, isOpen, handleSignIn, handleSignOut };
     return (
       <AppContext.Provider value={contextValue}>
         <>
-          <Navbar />
+          <CustomDropdown switch={this.switch}/>
           <PageContainer>
             { this.renderPage() }
           </PageContainer>
