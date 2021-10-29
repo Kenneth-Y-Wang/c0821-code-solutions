@@ -82,7 +82,6 @@ export default class AuthForm extends React.Component {
             Email
           </label>
           <input
-            required
             id="email"
             type="email"
             name="email"
@@ -94,7 +93,6 @@ export default class AuthForm extends React.Component {
             Location
           </label>
           <input
-            required
             id="location"
             type="text"
             name="location"

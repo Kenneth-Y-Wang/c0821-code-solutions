@@ -19,7 +19,7 @@ export default class AuthPage extends React.Component {
           <header className="form-header">
             <h2 className="">
 
-              Welcome Music Lover!
+              Welcome, Music Lovers!
             </h2>
             <p className="return-message">{ weclomeMessage }</p>
           </header>

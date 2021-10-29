@@ -3,18 +3,6 @@ import Redirect from '../components/redirect';
 import AppContext from '../lib/app-context';
 import CustomAccordion from '../components/accordion';
 
-const styles = {
-  gifContainer: {
-    width: '100%',
-    height: '100%',
-    paddingBottom: '75%',
-    position: 'relative'
-  },
-  gif: {
-    position: 'absolute'
-  }
-};
-
 const sections = [
   {
     title: 'My Picks',
@@ -38,13 +26,8 @@ export default class Home extends React.Component {
     if (!this.context.user) return <Redirect to="sign-in" />;
 
     return (
-      <div style={styles.gifContainer}>
-        <iframe
-          src="https://giphy.com/embed/Ju7l5y9osyymQ"
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          style={styles.gif} />
+      <div className="home-page">
+        <CustomAccordion sections={sections} />
       </div>
     );
   }
