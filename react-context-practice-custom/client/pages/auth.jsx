@@ -14,16 +14,16 @@ export default class AuthPage extends React.Component {
       ? 'Please sign in to continue'
       : 'Create an account to get started!';
     return (
-      <div className="row pt-5 align-items-center">
-        <div className="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-xl-4 offset-xl-4">
-          <header className="text-center">
-            <h2 className="mb-2">
-              <i className="fas fa-bolt me-2" />
-              Awesome App
+      <div className="auth-display ">
+        <div className="col-four-fifth">
+          <header className="form-header">
+            <h2 className="">
+
+              Welcome Music Lover!
             </h2>
-            <p className="text-muted mb-4">{ weclomeMessage }</p>
+            <p className="return-message">{ weclomeMessage }</p>
           </header>
-          <div className="card p-3 ">
+          <div className="col-three-fifth form-holder ">
             <AuthForm
               key={route.path}
               action={route.path}

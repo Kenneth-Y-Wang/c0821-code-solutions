@@ -50,8 +50,8 @@ export default class AuthForm extends React.Component {
       ? 'Register'
       : 'Log In';
     return (
-      <form className="w-100" onSubmit={handleSubmit}>
-        <div className="mb-3">
+      <form onSubmit={handleSubmit}>
+        <div className="mg-b-1">
           <label htmlFor="username" className="form-label">
             Username
           </label>
@@ -62,9 +62,9 @@ export default class AuthForm extends React.Component {
             type="text"
             name="username"
             onChange={handleChange}
-            className="form-control bg-light" />
+             />
         </div>
-        <div className="mb-3">
+        <div className="mg-b-1">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -73,16 +73,37 @@ export default class AuthForm extends React.Component {
             id="password"
             type="password"
             name="password"
-            onChange={handleChange}
-            className="form-control bg-light" />
+            onChange={handleChange} />
         </div>
-        <div className="d-flex justify-content-between align-items-center">
+        <div className={action === 'sign-up' ? 'mg-b-1' : 'mg-b-1 hidden'}>
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            required
+            id="email"
+            type="email"
+            name="email"
+            onChange={handleChange} />
+        </div>
+        <div className={action === 'sign-up' ? 'mg-b-1' : 'mg-b-1 hidden'}>
+          <label htmlFor="Location" className="form-label">
+            Location
+          </label>
+          <input
+            required
+            id="location"
+            type="text"
+            name="location"
+            onChange={handleChange} />
+        </div>
+        <div className="form-submit-row">
           <small>
-            <a className="text-muted" href={alternateActionHref}>
+            <a className="return-message" href={alternateActionHref}>
               { alternatActionText }
             </a>
           </small>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="button-main">
             { submitButtonText }
           </button>
         </div>
