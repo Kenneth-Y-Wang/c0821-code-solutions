@@ -35,7 +35,7 @@ export default class App extends React.Component {
   }
 
   switch() {
-    if (event.target.matches('a') === true || event.target.matches('.container') === true || event.target.matches('.fas') === true) {
+    if (event.target.matches('a') === true || event.target.matches('.overlay') === true || event.target.matches('.fas') === true) {
       this.setState(state => ({
         isOpen: !state.isOpen
       }));
