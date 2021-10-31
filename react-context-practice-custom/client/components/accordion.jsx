@@ -27,7 +27,7 @@ export default class CustomAccordion extends React.Component {
     );
 
     return (
-      <div className="container">
+      <div className="">
         {listSections}
       </div>
     );
