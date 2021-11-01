@@ -27,7 +27,10 @@ export default class Home extends React.Component {
 
     return (
       <div className="home-page">
-        <div className="personal-info"></div>
+        <div className="personal-info">
+          <div className="col-half user-profile-pic"></div>
+          <div className="col-half user-profile-pic"></div>
+        </div>
         <CustomAccordion sections={sections} />
       </div>
     );
