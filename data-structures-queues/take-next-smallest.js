@@ -16,3 +16,10 @@ function takeNextSmallest(queue) {
   }
   return firstValue;
 }
+
+// let nextSmallest=numberQueue.dequeue();
+// while(nextSmallest> numberQueue.peek()){
+//   numberQueue.enqueue(nextSmallest);
+//   nextSmallest=numberQueue.dequeue();
+// }
+// return nextSmallest;

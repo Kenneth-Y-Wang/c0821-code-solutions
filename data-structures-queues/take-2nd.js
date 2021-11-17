@@ -6,6 +6,9 @@ function take2nd(queue) {
 
   const firstValue = queue.dequeue();
 
+  // queue.enqueue(queue.dequeue());
+  // return queue.dequeue()
+
   if (queue.peek() === undefined) {
     queue.enqueue(firstValue);
     return firstValue;

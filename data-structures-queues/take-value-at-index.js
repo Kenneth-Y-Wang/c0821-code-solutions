@@ -9,3 +9,10 @@ function takeValueAtIndex(queue, index) {
   }
   return queue.dequeue();
 }
+
+// while(queue.peek() !== undefined && index>0){
+//   queue.enqueue(queue.dequeue());
+//   index --;
+// }
+
+// return queue.dequeue()

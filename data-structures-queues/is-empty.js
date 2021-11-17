@@ -7,3 +7,5 @@ function isEmpty(queue) {
     return false;
   }
 }
+
+// return typeof queue.peek() === 'undefined'
