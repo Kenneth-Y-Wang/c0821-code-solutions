@@ -10,3 +10,8 @@ function append(list, value) {
   const last = new LinkedList(value);
   list.next = last;
 }
+
+// const head=list;
+// while(list.next) list=list.next;
+// list.next= new LinedList(value);
+// return head;
