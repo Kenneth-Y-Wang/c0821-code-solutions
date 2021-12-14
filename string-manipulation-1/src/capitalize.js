@@ -1,11 +1,11 @@
 /* exported capitalize */
-function capitalize(word) {
-  var result = word[0].toUpperCase(); /* create a string storage-result for output with the first character from word capitalized */
-  for (var i = 1; i < word.length; i++) { /* look at each character from the second character ,one at a time */
-    result += word.charAt(i).toLowerCase(); /* add each character in its lower case form to the result storage */
-  }
-  return result; /* return the result storage */
-}
+// function capitalize(word) {
+//   var result = word[0].toUpperCase(); /* create a string storage-result for output with the first character from word capitalized */
+//   for (var i = 1; i < word.length; i++) { /* look at each character from the second character ,one at a time */
+//     result += word.charAt(i).toLowerCase(); /* add each character in its lower case form to the result storage */
+//   }
+//   return result; /* return the result storage */
+// }
 
 /* version with slice
 
@@ -33,3 +33,5 @@ function capitalize(word) {
   return word[0].toUpperCase()+word.slice(1).toLowerCase();
 }
 */
+
+const capitalize = word => word[0].toUpperCase() + word.slice(1).toLowerCase();
