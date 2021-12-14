@@ -1,4 +1,6 @@
 /* exported getDescriptionOfPerson */
-function getDescriptionOfPerson(person) {
-  return person.name + ' is a ' + person.occupation + ' from ' + person.birthPlace + '.';
-}
+// function getDescriptionOfPerson(person) {
+//   return person.name + ' is a ' + person.occupation + ' from ' + person.birthPlace + '.';
+// }
+
+const getDescriptionOfPerson = person => `${person.name} is a ${person.occupation} from ${person.birthPlace}.`;
