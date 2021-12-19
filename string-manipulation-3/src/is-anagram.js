@@ -38,7 +38,27 @@
 // }
 
 const isAnagram = (firstString, secondString) => {
-  const firstArray = firstString.split('');
-  const secondArray = secondString.split('');
+  const firstArray = [];
+  const secondArray = [];
+
+  for (let i = 0; i < firstString.length; i++) {
+    if (firstString[i] !== ' ') {
+      firstArray.push(firstString[i]);
+    }
+  }
+
+  for (let j = 0; j < secondString.length; j++) {
+    if (secondString[j] !== ' ') {
+      secondArray.push(secondString[j]);
+    }
+  }
+
+  for (let i = 0; i < firstArray.length; i++) {
+    if (secondArray.indexOf(firstArray[i]) !== -1) {
+      secondArray.splice(secondArray.indexOf(firstArray[i]), 1);
+    }
+  }
+
+  return secondArray.length === 0;
 
 };
