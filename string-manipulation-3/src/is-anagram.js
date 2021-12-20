@@ -62,3 +62,19 @@ const isAnagram = (firstString, secondString) => {
   return secondArray.length === 0;
 
 };
+
+// const isAnagram = (firstString, secondString) => {
+//   const firstArray = firstString.replace(' ', '').split('');
+//   const secondArray = secondString.replace(' ', '').split('');
+
+//   if (firstArray.length !== secondArray.length) {
+//     return false;
+//   } else {
+//     for (let i = 0; i < firstArray.length; i++) {
+//       if (secondArray.indexOf(firstArray[i]) !== -1) {
+//         secondArray.splice(secondArray.indexOf(firstArray[i]), 1);
+//       }
+//     }
+//     return secondArray.length === 0;
+//   }
+// };
