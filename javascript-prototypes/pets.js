@@ -23,10 +23,20 @@ var petPrototype = {
     this.sound.play();
   },
   getDescription: function () {
-    var description = this.rating + ' out of 10 ' + this.type;
+    var description = `${this.rating}  out of 10 ${this.type}`;
     return description;
   }
 };
 
+// const petPrototype = {
+//   speak: () => {
+//     this.sound.currentTime = 0;
+//     this.sound.play();
+//   },
+//   getDescription: () => {
+//     const description = this.rating + ' out of 10 ' + this.type;
+//     return description;
+//   }
+// };
 Object.setPrototypeOf(doggo, petPrototype);
 Object.setPrototypeOf(kitteh, petPrototype);
