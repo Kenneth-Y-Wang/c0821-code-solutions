@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f3f4;
+}
+
+.flag-holder {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag-background {
+  width: 300px;
+  height: 180px;
+  background-color: transparent;
+  border: 1px solid #6c757d;
+  box-shadow: 3px 5px 5px -2px rgb(81 81 81 / 70%);
+}
+
+.pattern-bar {
+  width: 100%;
+  height: calc(100% / 3);
+}
